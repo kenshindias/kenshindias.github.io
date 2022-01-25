@@ -522,8 +522,8 @@ data = {
         Divisoes: " ",
         //Imagens
         Imagem_Estado: ["img/estados/goias.png"],
-        Imagem1: "img/imagens/go/go1.jpg",
-        Imagem2: "img/imagens/go/go2.jpg",
+        Imagem1: "img/imagens/go/go1.JPG",
+        Imagem2: "img/imagens/go/go2.JPG",
         Imagem3: "img/imagens/go/go3.jpg",
         Images: [
             "img/Goias.png"
