@@ -1034,7 +1034,7 @@ data = {
         Divisoes: " ",
         //Imagens
         Imagem_Estado: ["img/estados/piaui.png"],
-        Imagem1: "img/imagens/pi/pi1.jpg",
+        Imagem1: "img/imagens/pi/pi1.JPG",
         Imagem2: "img/imagens/pi/pi2.jfif",
         Imagem3: "img/imagens/pi/pi3.jpg",
         Images: [
