@@ -694,7 +694,7 @@ data = {
         //Imagens
         Imagem_Estado: ["img/estados/matogrossodosul.png"],
         Imagem1: "img/imagens/ms/ms1.jpg",
-        Imagem2: "img/imagens/ms/ms2.jpg",
+        Imagem2: "img/imagens/ms/ms2.JPG",
         Imagem3: "img/imagens/ms/ms3.jpg",
         Images: [
             "img/MTS.png"
