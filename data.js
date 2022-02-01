@@ -55,7 +55,11 @@ data = {
         Images: [
             "img/acre.png"
         ],
-        Imagem_Estado: ["img/estados/acre.png"],
+        Imagem_Estado: [
+            "img/estados/acre/acre1.png",
+            "img/estados/acre/acre2.png",
+            "img/estados/acre/acre3.png",
+        ],
     },
     Alagoas: {
         Nome: "Alagoas",
@@ -107,7 +111,11 @@ data = {
         Divisoes: "-",
         
         //Imaagens
-        Imagem_Estado: ["img/estados/alagoas.png"],
+        Imagem_Estado: [
+            "img/estados/alagoas/alagoas1.png",
+            "img/estados/alagoas/alagoas2.png",
+            "img/estados/alagoas/alagoas3.png",
+        ],
         Imagem1: "img/imagens/al/al1.jpg",
         Imagem2: "img/imagens/al/al2.jpg",
         Imagem3: "img/imagens/al/al3.jpg",
@@ -165,7 +173,11 @@ data = {
         Divisoes: "-",
         
         //Imaagens
-        Imagem_Estado: ["img/estados/amapa.png"],
+        Imagem_Estado: [
+            "img/estados/amapa/amapa1.png",
+            "img/estados/amapa/amapa2.png",
+            "img/estados/amapa/amapa3.png",
+        ],
         Imagem1: "img/imagens/ap/ap1.jpg",
         Imagem2: "img/imagens/ap/ap2.jpg",
         Imagem3: "img/imagens/ap/ap3.jpg",
@@ -223,7 +235,11 @@ data = {
         Divisoes: "",
         
         //Imaagens
-        Imagem_Estado: ["img/estados/amazonas.png"],
+        Imagem_Estado: [
+            "img/estados/amazonas/amazonas1.png",
+            "img/estados/amazonas/amazonas2.png",
+            "img/estados/amazonas/amazonas3.png",
+        ],
         Imagem1: "img/imagens/am/am1.jpg",
         Imagem2: "img/imagens/am/am2.jpg",
         Imagem3: "img/imagens/am/am3.jpg",
@@ -292,7 +308,7 @@ data = {
             "img/bahia4.jpg"
         ],
         Imagem_Estado: [
-            "img/estados/bahia.png", 
+            "img/estados/bahia/ba1.png", 
             "img/estados/bahia/ba2.png"
         ]
     },
@@ -350,7 +366,11 @@ data = {
         Images: [
             "img/Ceara.png"
         ],
-        Imagem_Estado: ["img/estados/ceara.png"],
+        Imagem_Estado: [
+            "img/estados/ceara/ceara1.png",
+            "img/estados/ceara/ceara2.png",
+            "img/estados/ceara/ceara3.png",
+        ],
     },
     DistritoFederal: {
         Nome: "Distrito Federal",
@@ -407,7 +427,11 @@ data = {
         Divisoes: "",
 
         //Imagens
-        Imagem_Estado: ["img/estados/distrito.png"],
+        Imagem_Estado: [
+            "img/estados/distrito/distrito1.png",
+            "img/estados/distrito/distrito2.png",
+            "img/estados/distrito/distrito3.png"
+        ],
         Imagem1: "img/imagens/df/df1.jpg",
         Imagem2: "img/imagens/df/df2.jpg",
         Imagem3: "img/imagens/df/df3.jpg",
@@ -464,7 +488,11 @@ data = {
         Relevos: " zona de tabuleiros, zona serrana e planície costeira ",
         Divisoes: " ",
         //imagens
-        Imagem_Estado: ["img/estados/espirito.png"],
+        Imagem_Estado: [
+            "img/estados/espirito/espirito1.png",
+            "img/estados/espirito/espirito2.png",
+            "img/estados/espirito/espirito3.png",
+        ],
         Imagem1: "img/imagens/es/es1.jpg",
         Imagem2: "img/imagens/es/es2.jpg",
         Imagem3: "img/imagens/es/es3.jpg",
@@ -521,7 +549,11 @@ data = {
         Relevos: " planaltos, chapadas",
         Divisoes: " ",
         //Imagens
-        Imagem_Estado: ["img/estados/goias.png"],
+        Imagem_Estado: [
+            "img/estados/goais/goias1.png",
+            "img/estados/goais/goias2.png",
+            "img/estados/goais/goias3.png",
+        ],
         Imagem1: "img/imagens/go/go1.JPG",
         Imagem2: "img/imagens/go/go2.JPG",
         Imagem3: "img/imagens/go/go3.jpg",
@@ -578,7 +610,11 @@ data = {
         Relevos: "baixada litorânea e o planalto",
         Divisoes: " ",
         //Imagens
-        Imagem_Estado: ["img/estados/maranhao.png"],
+        Imagem_Estado: [
+            "img/estados/maranhao/maranhao1.png",
+            "img/estados/maranhao/maranhao2.png",
+            "img/estados/maranhao/maranhao3.png",
+        ],
         Imagem1: "img/imagens/ma/ma1.jpg",
         Imagem2: "img/imagens/ma/ma2.jpg",
         Imagem3: "img/imagens/ma/ma3.jpg",
@@ -635,7 +671,11 @@ data = {
         Relevos: " ",
         Divisoes: " ",
         //Imagens
-        Imagem_Estado: ["img/estados/matogrosso.png"],
+        Imagem_Estado: [
+            "img/estados/matogrosso/matogrosso1.png",
+            "img/estados/matogrosso/matogrosso2.png",
+            "img/estados/matogrosso/matogrosso3.png",
+        ],
         Imagem1: "img/imagens/mt/mt1.jpg",
         Imagem2: "img/imagens/mt/mt2.jpg",
         Imagem3: "img/imagens/mt/mt3.jpg",
@@ -692,7 +732,11 @@ data = {
         Relevos: "Planaltos, patamares e chapadões",
         Divisoes: "",
         //Imagens
-        Imagem_Estado: ["img/estados/matogrossodosul.png"],
+        Imagem_Estado: [
+            "img/estados/matogrossodosul/matogrossodosul1.png",
+            "img/estados/matogrossodosul/matogrossodosul2.png",
+            "img/estados/matogrossodosul/matogrossodosul3.png",
+        ],
         Imagem1: "img/imagens/ms/ms1.jpg",
         Imagem2: "img/imagens/ms/ms2.JPG",
         Imagem3: "img/imagens/ms/ms3.jpg",
@@ -748,7 +792,11 @@ data = {
         Relevos: "planaltos com escarpas e depressões",
         Divisoes: " ",
         //Imagens
-        Imagem_Estado: ["img/estados/minas.png"],
+        Imagem_Estado: [
+            "img/estados/minas/minas1.png",
+            "img/estados/minas/minas2.png",
+            "img/estados/minas/minas3.png",
+        ],
         Imagem1: "img/imagens/mg/mg1.jpg",
         Imagem2: "img/imagens/mg/mg2.jpg",
         Imagem3: "img/imagens/mg/mg3.jpg",
@@ -806,7 +854,11 @@ data = {
         Divisoes: " ",
 
         //Imagens
-        Imagem_Estado: ["img/estados/para.png"],
+        Imagem_Estado: [
+            "img/estados/para/para1.png",
+            "img/estados/para/para2.png",
+            "img/estados/para/para3.png",
+        ],
         Imagem1: "img/imagens/pa/pa1.jpg",
         Imagem2: "img/imagens/pa/pa2.jpg",
         Imagem3: "img/imagens/pa/pa3.jpg",
@@ -863,7 +915,11 @@ data = {
         Relevos: " planície litorânea, Depressão Sertaneja, ",
         Divisoes: " ",
         //Imagens
-        Imagem_Estado: ["img/estados/paraiba.png"],
+        Imagem_Estado: [
+            "img/estados/paraiba/paraiba1.png",
+            "img/estados/paraiba/paraiba2.png",
+            "img/estados/paraiba/paraiba3.png",
+        ],
         Imagem1: "img/imagens/pb/pb1.jpg",
         Imagem2: "img/imagens/pb/pb2.jpg",
         Imagem3: "img/imagens/pb/pb3.jpg",
@@ -920,7 +976,11 @@ data = {
         Relevos: "planaltos montanhosos, planícies de aluvião",
         Divisoes: " ",
         //Imagens
-        Imagem_Estado: ["img/estados/parana.png"],
+        Imagem_Estado: [
+            "img/estados/parana/parana1.png",
+            "img/estados/parana/parana2.png",
+            "img/estados/parana/parana3.png",
+        ],
         Imagem1: "img/imagens/pr/pr1.jpg",
         Imagem2: "img/imagens/pr/pr2.jpg",
         Imagem3: "img/imagens/pr/pr3.jpg",
@@ -976,7 +1036,11 @@ data = {
         Vegetacoes: "Floresta tropical perene, floresta tropical semidecídua e caatinga" ,
         Relevos: "",
         //Imagens
-        Imagem_Estado: ["img/estados/pernambuco.png"],
+        Imagem_Estado: [
+            "img/estados/pernambuco/pernambuco1.png",
+            "img/estados/pernambuco/pernambuco2.png",
+            "img/estados/pernambuco/pernambuco3.png",
+        ],
         Imagem1: "img/imagens/pe/pe1.png",
         Imagem2: "img/imagens/pe/pe2.jpg",
         Imagem3: "img/imagens/pe/pe3.jpg",
@@ -1033,7 +1097,11 @@ data = {
         Relevos: "",
         Divisoes: " ",
         //Imagens
-        Imagem_Estado: ["img/estados/piaui.png"],
+        Imagem_Estado: [
+            "img/estados/piaui/piaui1.png",
+            "img/estados/piaui/piaui2.png",
+            "img/estados/piaui/piaui3.png",
+        ],
         Imagem1: "img/imagens/pi/pi1.JPG",
         Imagem2: "img/imagens/pi/pi2.jfif",
         Imagem3: "img/imagens/pi/pi3.jpg",
@@ -1090,7 +1158,11 @@ data = {
         Relevos: "",
         Divisoes: "",
         //Imagens
-        Imagem_Estado: ["img/estados/rio.png"],
+        Imagem_Estado: [
+            "img/estados/rio/rio1.png",
+            "img/estados/rio/rio2.png",
+            "img/estados/rio/rio3.png",
+        ],
         Imagem1: "img/imagens/rj/rj1.jpg",
         Imagem2: "img/imagens/rj/rj2.jpg",
         Imagem3: "img/imagens/rj/rj3.jpg",
@@ -1147,7 +1219,11 @@ data = {
         Relevos: "",
         Divisoes: " ",
         //Imagens
-        Imagem_Estado: ["img/estados/riograndedonorte.png"],
+        Imagem_Estado: [
+            "img/estados/riograndedonorte/riograndedonorte1.png",
+            "img/estados/riograndedonorte/riograndedonorte2.png",
+            "img/estados/riograndedonorte/riograndedonorte3.png",
+        ],
         Imagem1: "img/imagens/rn/rn1.jpg",
         Imagem2: "img/imagens/rn/rn2.jpg",
         Imagem3: "img/imagens/rn/rn3.jpg",
@@ -1204,7 +1280,11 @@ data = {
         Relevos: "",
         Divisoes: " ",
         //Imagens
-        Imagem_Estado: ["img/estados/riograndedosul.png"],
+        Imagem_Estado: [
+            "img/estados/riograndedosul/riograndedosul1.png",
+            "img/estados/riograndedosul/riograndedosul2.png",
+            "img/estados/riograndedosul/riograndedosul3.png",
+        ],
         Imagem1: "img/imagens/rs/rs1.jpg",
         Imagem2: "img/imagens/rs/rs2.jpg",
         Imagem3: "img/imagens/rs/rs3.jfif",
@@ -1261,7 +1341,11 @@ data = {
         Relevos: "o planalto cristalino, o chapadão e a planície aluvial",
         Divisoes: " ",
         //Images
-        Imagem_Estado: ["img/estados/rondonia.png"],
+        Imagem_Estado: [
+            "img/estados/rondonia/rondonia1.png",
+            "img/estados/rondonia/rondonia2.png",
+            "img/estados/rondonia/rondonia3.png",
+        ],
         Imagem1: "img/imagens/ro/ro1.jpg",
         Imagem2: "img/imagens/ro/ro2.jpg",
         Imagem3: "img/imagens/ro/ro3.png",
@@ -1321,7 +1405,11 @@ data = {
         //Racial
         Etnias: "-",
         Religioes: "-",
-        Imagem_Estado: ["img/estados/roraima.png"],
+        Imagem_Estado: [
+            "img/estados/roraima/roraima1.png",
+            "img/estados/roraima/roraima2.png",
+            "img/estados/roraima/roraima3.png",
+        ],
         //IMAGENS
         Imagem1: "img/imagens/rr/rr1.jpg",
         Imagem2: "img/imagens/rr/rr2.jpg",
@@ -1379,7 +1467,11 @@ data = {
         Relevos: " baixada litorânea, Serra do Mar, planalto paleozoico e basáltico",
         Divisoes: " ",
         //Imagens
-        Imagem_Estado: ["img/estados/santacatarina.png"],
+        Imagem_Estado: [
+            "img/estados/santacatarina/santacatarina1.png",
+            "img/estados/santacatarina/santacatarina2.png",
+            "img/estados/santacatarina/santacatarina3.png",
+        ],
         Imagem1: "img/imagens/sc/sc1.jpg",
         Imagem2: "img/imagens/sc/sc2.jpg",
         Imagem3: "img/imagens/sc/sc3.jpg",
@@ -1435,7 +1527,11 @@ data = {
         Vegetacoes: "Mata Atlântica e cerrado" ,
         Relevos: "",
         //Imagens
-        Imagem_Estado: ["img/estados/saopaulo.png"],
+        Imagem_Estado: [
+            "img/estados/saopaulo/saopaulo1.png",
+            "img/estados/saopaulo/saopaulo2.png",
+            "img/estados/saopaulo/saopaulo3.png",
+        ],
         Imagem1: "img/imagens/sp/sp1.jpg",
         Imagem2: "img/imagens/sp/sp2.jpg",
         Imagem3: "img/imagens/sp/sp3.jpg",
@@ -1491,7 +1587,11 @@ data = {
         Vegetacoes: "Caatinga, mangues e floresta tropical" ,
         Relevos: "",
         //Imagens
-        Imagem_Estado: ["img/estados/sergipe.png"],
+        Imagem_Estado: [
+            "img/estados/sergipe/sergipe1.png",
+            "img/estados/sergipe/sergipe2.png",
+            "img/estados/sergipe/sergipe3.png",
+        ],
         Imagem1: "img/imagens/se/se1.jpg",
         Imagem2: "img/imagens/se/se2.jpg",
         Imagem3: "img/imagens/se/se3.jpg",
@@ -1547,7 +1647,11 @@ data = {
         Vegetacoes: "Cerrado" ,
         Relevos: "",
         //Imagens
-        Imagem_Estado: ["img/estados/tocantins.png"],
+        Imagem_Estado: [
+            "img/estados/tocantins/tocantins1.png",
+            "img/estados/tocantins/tocantins2.png",
+            "img/estados/tocantins/tocantins3.png",
+        ],
         Imagem1: "img/imagens/to/to1.jpg",
         Imagem2: "img/imagens/to/to2.jpg",
         Imagem3: "img/imagens/to/to3.jpg",
