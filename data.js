@@ -309,7 +309,8 @@ data = {
         ],
         Imagem_Estado: [
             "img/estados/bahia/ba1.png", 
-            "img/estados/bahia/ba2.png"
+            "img/estados/bahia/ba2.png",
+            "img/estados/bahia/ba3.png"
         ]
     },
     Ceara: {
@@ -550,9 +551,9 @@ data = {
         Divisoes: " ",
         //Imagens
         Imagem_Estado: [
-            "img/estados/goais/goias1.png",
-            "img/estados/goais/goias2.png",
-            "img/estados/goais/goias3.png",
+            "img/estados/goias/goias1.png",
+            "img/estados/goias/goias2.png",
+            "img/estados/goias/goias3.png",
         ],
         Imagem1: "img/imagens/go/go1.JPG",
         Imagem2: "img/imagens/go/go2.JPG",
