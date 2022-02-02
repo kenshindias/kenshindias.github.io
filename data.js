@@ -58,7 +58,7 @@ data = {
         Imagem_Estado: [
             "img/estados/acre/acre1.png",
             "img/estados/acre/acre2.png",
-            "img/estados/acre/acre3.png",
+            "img/estados/acre/acre3.PNG",
         ],
     },
     Alagoas: {
@@ -114,7 +114,7 @@ data = {
         Imagem_Estado: [
             "img/estados/alagoas/alagoas1.png",
             "img/estados/alagoas/alagoas2.png",
-            "img/estados/alagoas/alagoas3.png",
+            "img/estados/alagoas/alagoas3.PNG",
         ],
         Imagem1: "img/imagens/al/al1.jpg",
         Imagem2: "img/imagens/al/al2.jpg",
@@ -176,7 +176,7 @@ data = {
         Imagem_Estado: [
             "img/estados/amapa/amapa1.png",
             "img/estados/amapa/amapa2.png",
-            "img/estados/amapa/amapa3.png",
+            "img/estados/amapa/amapa3.PNG",
         ],
         Imagem1: "img/imagens/ap/ap1.jpg",
         Imagem2: "img/imagens/ap/ap2.jpg",
@@ -238,7 +238,7 @@ data = {
         Imagem_Estado: [
             "img/estados/amazonas/amazonas1.png",
             "img/estados/amazonas/amazonas2.png",
-            "img/estados/amazonas/amazonas3.png",
+            "img/estados/amazonas/amazonas3.PNG",
         ],
         Imagem1: "img/imagens/am/am1.jpg",
         Imagem2: "img/imagens/am/am2.jpg",
@@ -310,7 +310,7 @@ data = {
         Imagem_Estado: [
             "img/estados/bahia/ba1.png", 
             "img/estados/bahia/ba2.png",
-            "img/estados/bahia/ba3.png"
+            "img/estados/bahia/ba3.PNG"
         ]
     },
     Ceara: {
@@ -370,7 +370,7 @@ data = {
         Imagem_Estado: [
             "img/estados/ceara/ceara1.png",
             "img/estados/ceara/ceara2.png",
-            "img/estados/ceara/ceara3.png",
+            "img/estados/ceara/ceara3.PNG",
         ],
     },
     DistritoFederal: {
@@ -431,7 +431,7 @@ data = {
         Imagem_Estado: [
             "img/estados/distrito/distrito1.png",
             "img/estados/distrito/distrito2.png",
-            "img/estados/distrito/distrito3.png"
+            "img/estados/distrito/distrito3.PNG"
         ],
         Imagem1: "img/imagens/df/df1.jpg",
         Imagem2: "img/imagens/df/df2.jpg",
@@ -553,7 +553,7 @@ data = {
         Imagem_Estado: [
             "img/estados/goias/goias1.png",
             "img/estados/goias/goias2.png",
-            "img/estados/goias/goias3.png",
+            "img/estados/goias/goias3.PNG",
         ],
         Imagem1: "img/imagens/go/go1.JPG",
         Imagem2: "img/imagens/go/go2.JPG",
@@ -614,7 +614,7 @@ data = {
         Imagem_Estado: [
             "img/estados/maranhao/maranhao1.png",
             "img/estados/maranhao/maranhao2.png",
-            "img/estados/maranhao/maranhao3.png",
+            "img/estados/maranhao/maranhao3.PNG",
         ],
         Imagem1: "img/imagens/ma/ma1.jpg",
         Imagem2: "img/imagens/ma/ma2.jpg",
@@ -675,7 +675,7 @@ data = {
         Imagem_Estado: [
             "img/estados/matogrosso/matogrosso1.png",
             "img/estados/matogrosso/matogrosso2.png",
-            "img/estados/matogrosso/matogrosso3.png",
+            "img/estados/matogrosso/matogrosso3.PNG",
         ],
         Imagem1: "img/imagens/mt/mt1.jpg",
         Imagem2: "img/imagens/mt/mt2.jpg",
@@ -736,7 +736,7 @@ data = {
         Imagem_Estado: [
             "img/estados/matogrossodosul/matogrossodosul1.png",
             "img/estados/matogrossodosul/matogrossodosul2.png",
-            "img/estados/matogrossodosul/matogrossodosul3.png",
+            "img/estados/matogrossodosul/matogrossodosul3.PNG",
         ],
         Imagem1: "img/imagens/ms/ms1.jpg",
         Imagem2: "img/imagens/ms/ms2.JPG",
@@ -796,7 +796,7 @@ data = {
         Imagem_Estado: [
             "img/estados/minas/minas1.png",
             "img/estados/minas/minas2.png",
-            "img/estados/minas/minas3.png",
+            "img/estados/minas/minas3.PNG",
         ],
         Imagem1: "img/imagens/mg/mg1.jpg",
         Imagem2: "img/imagens/mg/mg2.jpg",
@@ -858,7 +858,7 @@ data = {
         Imagem_Estado: [
             "img/estados/para/para1.png",
             "img/estados/para/para2.png",
-            "img/estados/para/para3.png",
+            "img/estados/para/para3.PNG",
         ],
         Imagem1: "img/imagens/pa/pa1.jpg",
         Imagem2: "img/imagens/pa/pa2.jpg",
@@ -919,7 +919,7 @@ data = {
         Imagem_Estado: [
             "img/estados/paraiba/paraiba1.png",
             "img/estados/paraiba/paraiba2.png",
-            "img/estados/paraiba/paraiba3.png",
+            "img/estados/paraiba/paraiba3.PNG",
         ],
         Imagem1: "img/imagens/pb/pb1.jpg",
         Imagem2: "img/imagens/pb/pb2.jpg",
@@ -980,7 +980,7 @@ data = {
         Imagem_Estado: [
             "img/estados/parana/parana1.png",
             "img/estados/parana/parana2.png",
-            "img/estados/parana/parana3.png",
+            "img/estados/parana/parana3.PNG",
         ],
         Imagem1: "img/imagens/pr/pr1.jpg",
         Imagem2: "img/imagens/pr/pr2.jpg",
@@ -1040,7 +1040,7 @@ data = {
         Imagem_Estado: [
             "img/estados/pernambuco/pernambuco1.png",
             "img/estados/pernambuco/pernambuco2.png",
-            "img/estados/pernambuco/pernambuco3.png",
+            "img/estados/pernambuco/pernambuco3.PNG",
         ],
         Imagem1: "img/imagens/pe/pe1.png",
         Imagem2: "img/imagens/pe/pe2.jpg",
@@ -1101,7 +1101,7 @@ data = {
         Imagem_Estado: [
             "img/estados/piaui/piaui1.png",
             "img/estados/piaui/piaui2.png",
-            "img/estados/piaui/piaui3.png",
+            "img/estados/piaui/piaui3.PNG",
         ],
         Imagem1: "img/imagens/pi/pi1.JPG",
         Imagem2: "img/imagens/pi/pi2.jfif",
@@ -1162,7 +1162,7 @@ data = {
         Imagem_Estado: [
             "img/estados/rio/rio1.png",
             "img/estados/rio/rio2.png",
-            "img/estados/rio/rio3.png",
+            "img/estados/rio/rio3.PNG",
         ],
         Imagem1: "img/imagens/rj/rj1.jpg",
         Imagem2: "img/imagens/rj/rj2.jpg",
@@ -1223,7 +1223,7 @@ data = {
         Imagem_Estado: [
             "img/estados/riograndedonorte/riograndedonorte1.png",
             "img/estados/riograndedonorte/riograndedonorte2.png",
-            "img/estados/riograndedonorte/riograndedonorte3.png",
+            "img/estados/riograndedonorte/riograndedonorte3.PNG",
         ],
         Imagem1: "img/imagens/rn/rn1.jpg",
         Imagem2: "img/imagens/rn/rn2.jpg",
@@ -1284,7 +1284,7 @@ data = {
         Imagem_Estado: [
             "img/estados/riograndedosul/riograndedosul1.png",
             "img/estados/riograndedosul/riograndedosul2.png",
-            "img/estados/riograndedosul/riograndedosul3.png",
+            "img/estados/riograndedosul/riograndedosul3.PNG",
         ],
         Imagem1: "img/imagens/rs/rs1.jpg",
         Imagem2: "img/imagens/rs/rs2.jpg",
@@ -1345,7 +1345,7 @@ data = {
         Imagem_Estado: [
             "img/estados/rondonia/rondonia1.png",
             "img/estados/rondonia/rondonia2.png",
-            "img/estados/rondonia/rondonia3.png",
+            "img/estados/rondonia/rondonia3.PNG",
         ],
         Imagem1: "img/imagens/ro/ro1.jpg",
         Imagem2: "img/imagens/ro/ro2.jpg",
@@ -1409,7 +1409,7 @@ data = {
         Imagem_Estado: [
             "img/estados/roraima/roraima1.png",
             "img/estados/roraima/roraima2.png",
-            "img/estados/roraima/roraima3.png",
+            "img/estados/roraima/roraima3.PNG",
         ],
         //IMAGENS
         Imagem1: "img/imagens/rr/rr1.jpg",
@@ -1471,7 +1471,7 @@ data = {
         Imagem_Estado: [
             "img/estados/santacatarina/santacatarina1.png",
             "img/estados/santacatarina/santacatarina2.png",
-            "img/estados/santacatarina/santacatarina3.png",
+            "img/estados/santacatarina/santacatarina3.PNG",
         ],
         Imagem1: "img/imagens/sc/sc1.jpg",
         Imagem2: "img/imagens/sc/sc2.jpg",
@@ -1531,7 +1531,7 @@ data = {
         Imagem_Estado: [
             "img/estados/saopaulo/saopaulo1.png",
             "img/estados/saopaulo/saopaulo2.png",
-            "img/estados/saopaulo/saopaulo3.png",
+            "img/estados/saopaulo/saopaulo3.PNG",
         ],
         Imagem1: "img/imagens/sp/sp1.jpg",
         Imagem2: "img/imagens/sp/sp2.jpg",
@@ -1591,7 +1591,7 @@ data = {
         Imagem_Estado: [
             "img/estados/sergipe/sergipe1.png",
             "img/estados/sergipe/sergipe2.png",
-            "img/estados/sergipe/sergipe3.png",
+            "img/estados/sergipe/sergipe3.PNG",
         ],
         Imagem1: "img/imagens/se/se1.jpg",
         Imagem2: "img/imagens/se/se2.jpg",
@@ -1651,7 +1651,7 @@ data = {
         Imagem_Estado: [
             "img/estados/tocantins/tocantins1.png",
             "img/estados/tocantins/tocantins2.png",
-            "img/estados/tocantins/tocantins3.png",
+            "img/estados/tocantins/tocantins3.PNG",
         ],
         Imagem1: "img/imagens/to/to1.jpg",
         Imagem2: "img/imagens/to/to2.jpg",
