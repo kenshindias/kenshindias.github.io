@@ -156,6 +156,23 @@
             font-size: 20px;
         }  
 
+        #carrossel {
+          max-width: 500px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        #carrossel img {
+          width: 100%;
+          max-width: 64px;
+          height: 56px;
+          margin: 0 20px;
+        }
+
+        #carrossel img.selected {
+          border: 1px solid black;
+        }
         
         
 
@@ -256,8 +273,8 @@
                 <div id = "imagem_estado" style = "display: none">
             
                   <div id = "botoes2">
-                      
                       <button onclick="btn_esq2()">ANTERIOR</button>
+                      <div id="carrossel"></div>
                       <button onclick="btn_dir2()">PRÓXIMO</button>
                   </div>
                   <div id = "mapa_estado">
@@ -1200,6 +1217,8 @@
 
                 var divisao = document.getElementById("divisao");
                 divisao.innerHTML = info_estado["Divisoes"];
+
+                getImagesToMakeThumbnail();
             }
             //mapas extras
             function btn_dir2(){
@@ -1219,6 +1238,9 @@
                 image_to_show = maps_images[imagem_atual]
 
                 var img_estado = document.getElementById("img_estado");
+
+                getSelectedThumbnail(maps_images);
+
                 img_estado.src = image_to_show;
             }
 
@@ -1239,8 +1261,71 @@
                 image_to_show = maps_images[imagem_atual]
 
                 var img_estado = document.getElementById("img_estado");
+
+                getSelectedThumbnail(maps_images);
+
                 img_estado.src = image_to_show;
             }
+
+            function getSelectedThumbnail(imagesArray) {
+              for(let i = 0; i < imagesArray.length; i++) {
+                if (i == imagem_atual) {
+                  var selectedThumbnail = document.getElementById(`estado-${estado_atual}-mapa-extra-${imagem_atual}`);
+                  selectedThumbnail.classList.add('selected');
+                } else {
+                  var selectedThumbnail = document.getElementById(`estado-${estado_atual}-mapa-extra-${i}`);
+                  selectedThumbnail.classList.remove('selected');
+                }
+              }
+            }
+
+            function selecteDirectlyImage(element) {
+              var index = estados.findIndex(function (element,index,array){
+                return estado_atual == element;
+              });
+
+              var maps_images = data[estados[index]].Imagem_Estado;
+
+              if(element.target.classList.length > 1) {
+                imagem_atual = Number(element.target.classList[1]);
+              } else {
+                imagem_atual = Number(element.target.classList[0]);
+              }
+              
+              getSelectedThumbnail(maps_images);
+
+              var img_estado = document.getElementById("img_estado");
+              img_estado.src = data[estados[index]].Imagem_Estado[imagem_atual];              
+            }
+
+            function getImagesToMakeThumbnail() {
+              var index = estados.findIndex(function (element,index,array){
+                return estado_atual == element;
+              });
+              
+              var carrosselContainer = document.getElementById('carrossel');
+
+              var maps_images = data[estados[index]].Imagem_Estado;
+
+              maps_images.map((image, index) => {
+                let thumbnail = document.createElement('img'); //<img>
+                thumbnail.src = image; //<img src="1.jpg"/>
+                if(index === 0) {
+                  thumbnail.classList.add('selected');
+                }
+                thumbnail.id = `estado-${estado_atual}-mapa-extra-${index}`;
+                thumbnail.classList.add(index);
+                thumbnail.onclick = selecteDirectlyImage;
+                carrosselContainer.appendChild(thumbnail);
+              })
+
+            }
+
+            function clearImagesCarrossel() {
+              var carrosselContainer = document.getElementById('carrossel');
+              carrosselContainer.innerHTML = '';
+            }
+
 
             //----------------------------------------------------------------
             function btn_esq(){
@@ -1259,6 +1344,7 @@
 
                 img_estado.src = info_estado.Imagem_Estado;
                 estado_atual = estados[index];
+                clearImagesCarrossel();
                 clicou(estado_atual);
             }
 
@@ -1278,12 +1364,14 @@
 
                 img_estado.src = info_estado.Imagem_Estado;
                 estado_atual = estados[index];
+                clearImagesCarrossel();
                 clicou(estado_atual);
             }
 
             function voltar(){
                 imagem_mapa.style.display = "block";
                 imagem_estado.style.display = "none";
+                clearImagesCarrossel();
             }
 
 

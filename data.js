@@ -114,7 +114,7 @@ data = {
         Imagem_Estado: [
             "img/estados/alagoas/alagoas1.png",
             "img/estados/alagoas/alagoas2.png",
-            "img/estados/alagoas/alagoas3.PNG",
+            "img/estados/alagoas/alagoas3.png",
         ],
         Imagem1: "img/imagens/al/al1.jpg",
         Imagem2: "img/imagens/al/al2.jpg",
@@ -492,7 +492,7 @@ data = {
         Imagem_Estado: [
             "img/estados/espirito/espirito1.png",
             "img/estados/espirito/espirito2.png",
-            "img/estados/espirito/espirito3.png",
+            "img/estados/espirito/espirito3.PNG",
         ],
         Imagem1: "img/imagens/es/es1.jpg",
         Imagem2: "img/imagens/es/es2.jpg",
@@ -553,7 +553,7 @@ data = {
         Imagem_Estado: [
             "img/estados/goias/goias1.png",
             "img/estados/goias/goias2.png",
-            "img/estados/goias/goias3.PNG",
+            "img/estados/goias/goias3.png",
         ],
         Imagem1: "img/imagens/go/go1.JPG",
         Imagem2: "img/imagens/go/go2.JPG",
@@ -919,7 +919,7 @@ data = {
         Imagem_Estado: [
             "img/estados/paraiba/paraiba1.png",
             "img/estados/paraiba/paraiba2.png",
-            "img/estados/paraiba/paraiba3.PNG",
+            "img/estados/paraiba/paraiba3.png",
         ],
         Imagem1: "img/imagens/pb/pb1.jpg",
         Imagem2: "img/imagens/pb/pb2.jpg",
@@ -1471,7 +1471,7 @@ data = {
         Imagem_Estado: [
             "img/estados/santacatarina/santacatarina1.png",
             "img/estados/santacatarina/santacatarina2.png",
-            "img/estados/santacatarina/santacatarina3.PNG",
+            "img/estados/santacatarina/santacatarina3.png",
         ],
         Imagem1: "img/imagens/sc/sc1.jpg",
         Imagem2: "img/imagens/sc/sc2.jpg",
@@ -1591,7 +1591,7 @@ data = {
         Imagem_Estado: [
             "img/estados/sergipe/sergipe1.png",
             "img/estados/sergipe/sergipe2.png",
-            "img/estados/sergipe/sergipe3.PNG",
+            "img/estados/sergipe/sergipe3.png",
         ],
         Imagem1: "img/imagens/se/se1.jpg",
         Imagem2: "img/imagens/se/se2.jpg",
