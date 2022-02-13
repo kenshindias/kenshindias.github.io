@@ -75,8 +75,10 @@
         }
 
         #site{
-            width: 900px;
+            width: -2px;
             height: 768px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         #container{
@@ -102,13 +104,15 @@
         /*IMAGEM ESTADO*/
         #mapa_estado{
           width: 900px;
-          height: 836px;
+          height: 821px;
           display: flex;
           align-items:center;
+          margin-left: auto;
+          margin-right: auto;
         }
         #imagem_estado{
-          width: 900px;
-          height: 768px;
+          width: 950px;
+          height: 754px;
           display: flex;
         }
         
@@ -121,34 +125,35 @@
         }
 
         #botoes2{
-            border:rgb(255, 255, 255);
+            border:rgb(8, 8, 8);
             padding: 7px;
-            /*background-color: #363b48;*/
+            
             display: flex;
             justify-content: space-around;
             align-items: center;
             width: 942px;
-            height: 50px;
+            height: 65px;
             
         }
 
         #botões{
             border:rgb(255, 255, 255);
             padding: 7px;
-            background-color: #363b48;
+            /*background-color: #363b48;*/
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 945px;
+            width: 930px;
             height: 50px;
             
         }
 
         button{
+            border-radius: 100%;
             border: none;
             width: 12 0px;
             height: 64px;
-            padding: 7px;
+            padding: 20px;
             background-color: #e54e43;
             color: #fff;
             cursor: pointer;
@@ -274,17 +279,17 @@
                 <div id = "imagem_estado" style = "display: none">
             
                   <div id = "botoes2">
-                      <button onclick="btn_esq2()">ANTERIOR</button>
+                      <button onclick="btn_esq2()"><</button>
                       <div id="carrossel"></div>
-                      <button onclick="btn_dir2()">PRÓXIMO</button>
+                      <button onclick="btn_dir2()">></button>
                   </div>
                   <div id = "mapa_estado">
                       <img id = "img_estado" src="" ></img>
                   </div>
                     <div id = "botões">
-                      <button onclick="btn_esq()">ANTERIOR</button>
-                      <button onclick="voltar()">VOLTAR</button>
-                      <button onclick="btn_dir()">PRÓXIMO</button>
+                      <button onclick="btn_esq()">ESTADO ANTERIOR</button>
+                      <button onclick="voltar()">MAPA</button>
+                      <button onclick="btn_dir()">PRÓXIMO ESTADO</button>
                     </div>
                 </div>
                 
@@ -1017,7 +1022,7 @@
                         </li>
                         <li>
                           <input type="radio" name="tabs" class="rd_tab" id="tab6">
-                          <label for="tab6" class="tab_label">GEOGRAFIA</label>
+                          <label for="tab6" class="tab_label">NATUREZA</label>
                           <div class="tab-content">
                             <div id = "container" style = "text-align: center;">                          
                                 <!--INICIO TABELA-->
