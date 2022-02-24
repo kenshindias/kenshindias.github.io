@@ -17,8 +17,8 @@
 
             .nav_tabs{
                 width: 900px;
-                height: 964px;
-                margin: 100px auto;
+                height: 885px;
+                margin-top: 100px ;
                 background-color: #fff;
                 position: relative; 
             }
@@ -180,7 +180,16 @@
           border: 1px solid black;
         }
         
-        
+        table{
+          border-collapse: separate;
+          border-spacing: 0 8px;
+          margin-top: -8px;
+        }
+        td {
+          border-left-width: 0;
+          min-width: 120px;
+          height: 18px;
+        }
 
         /* Slideshow container */
 
@@ -188,14 +197,16 @@
           background-color: rgba(0,0,0,0.8);
           width: 900px;
           height: 400px;
+          display: none;
+          position: absolute;
         }
         .slideshow-container {
           max-width: 600px;
-          max-height: 405px;
+          max-height: 250px;
           display:flex;
           position:relative;
           margin:auto;
-          margin-top: 150px;
+          
         }
 
         /* Hide the images by default */
@@ -267,7 +278,15 @@
           from {opacity: .4}
           to {opacity: 1}
         }
-
+        #fonte{
+          text-align: center;
+        }
+        #links{
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          justify-content: space-between;
+        }
         </style>
     </head>
 
@@ -772,7 +791,7 @@
                                     <!--FINAL TABELA-->
 
                                     <!--SHOW DE SLIDES-->
-                                    <div id = "slides_background" style="display: none;">
+                                    <div id = "slides_background">
                                       <div class="slideshow-container">
                                         <!-- Slideshow container -->
                                         <!-- Full-width images with number and caption text -->
@@ -997,7 +1016,7 @@
                         </li>
                         <li>
                             <input type="radio" name="tabs" class="rd_tab" id="tab5">
-                            <label for="tab5" class="tab_label">RACIAL</label>
+                            <label for="tab5" class="tab_label">CULTURA</label>
                             <div class="tab-content">
                               <div id = "container" style = "text-align: center;">    
                                   <!--INICIO TABELA-->
@@ -1065,6 +1084,15 @@
                       </li>
                     </ul>
                 </nav>
+                <div id = "fonte">
+                    <h3>Fonte dos Dados</h3>
+                    <p>Todos os dados foram retirados da Wikipédia, do site do IBGE, e do Portal da Industria</p><br>
+                    <div id = "links">
+                        <a href = "https://pt.wikipedia.org/" target="_blank">Wikipédia</a>
+                        <a href = "https://www.ibge.gov.br/" target="_blank">IBGE</a>
+                        <a href = "https://perfildaindustria.portaldaindustria.com.br/" target="_blank">Portal da Industria</a>
+                    </div>
+                </div>
             </div>           
         </div>
         
