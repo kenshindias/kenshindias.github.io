@@ -60,6 +60,7 @@ data = {
             "img/estados/acre/acre2.png",
             "img/estados/acre/acre3.PNG",
         ],
+        Imagem_movel: "img/imagens/ac.png",
     },
     Alagoas: {
         Nome: "Alagoas",
@@ -121,7 +122,8 @@ data = {
         Imagem3: "img/imagens/al/al3.jpg",
         Images: [
             "img/alagoas.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/al.png",
     },
     Amapa: {
         Nome: "Amapá",
@@ -183,7 +185,8 @@ data = {
         Imagem3: "img/imagens/ap/ap3.jpg",
         Images: [
             "img/amapa.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/ap.png",
     },
     Amazonas: {
         Nome: "Amazonas",
@@ -245,7 +248,8 @@ data = {
         Imagem3: "img/imagens/am/am3.jpg",
         Images: [
             "img/amazonas.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/am.png",
     },
     Bahia: {
         Nome: "Bahia",
@@ -311,7 +315,8 @@ data = {
             "img/estados/bahia/ba1.png", 
             "img/estados/bahia/ba2.png",
             "img/estados/bahia/ba3.PNG"
-        ]
+        ],
+        Imagem_movel: "img/imagens/ba.png",
     },
     Ceara: {
         Nome: "Ceará",
@@ -372,6 +377,7 @@ data = {
             "img/estados/ceara/ceara2.png",
             "img/estados/ceara/ceara3.PNG",
         ],
+        Imagem_movel: "img/imagens/ce.png",
     },
     DistritoFederal: {
         Nome: "Distrito Federal",
@@ -438,7 +444,8 @@ data = {
         Imagem3: "img/imagens/df/df3.jpg",
         Images: [
             "img/DF.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/df.png",
     },
     EspiritoSanto: {
         Nome: "Espírito Santo",
@@ -499,7 +506,8 @@ data = {
         Imagem3: "img/imagens/es/es3.jpg",
         Images: [
             "img/ES.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/es.png",
     },
     Goias: {
         Nome: "Goiás",
@@ -560,7 +568,8 @@ data = {
         Imagem3: "img/imagens/go/go3.jpg",
         Images: [
             "img/Goias.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/go.png",
     },
     Maranhao: {
         Nome: "Maranhão",
@@ -621,7 +630,8 @@ data = {
         Imagem3: "img/imagens/ma/ma3.jpg",
         Images: [
             "img/Maranhao.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/ma.png",
     },
     MatoGrosso: {
         Nome: "Mato Grosso",
@@ -682,7 +692,8 @@ data = {
         Imagem3: "img/imagens/mt/mt3.jpg",
         Images: [
             "img/MT.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/mt.png",
     },
     MatoGrossodoSul: {
         Nome: "Mato Grosso do Sul",
@@ -743,7 +754,8 @@ data = {
         Imagem3: "img/imagens/ms/ms3.jpg",
         Images: [
             "img/MTS.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/ms.png",
     },
     MinasGerais: {
         Nome: "Minas Gerais",
@@ -803,7 +815,8 @@ data = {
         Imagem3: "img/imagens/mg/mg3.jpg",
         Images: [
             "img/MG.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/mg.png",
     },
     Para: {
         Nome: "Pará",
@@ -865,7 +878,8 @@ data = {
         Imagem3: "img/imagens/pa/pa3.jpg",
         Images: [
             "img/Para.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/pa.png",
     },
     Paraiba: {
         Nome: "Paraíba",
@@ -926,7 +940,8 @@ data = {
         Imagem3: "img/imagens/pb/pb3.jpg",
         Images: [
             "img/Paraiba.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/pb.png",
     },
     Parana: {
         Nome: "Paraná",
@@ -987,7 +1002,8 @@ data = {
         Imagem3: "img/imagens/pr/pr3.jpg",
         Images: [
             "img/Parana.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/pr.png",
     },
     Pernambuco: {
         Nome: "Pernambuco",
@@ -1047,7 +1063,8 @@ data = {
         Imagem3: "img/imagens/pe/pe3.jpg",
         Images: [
             "img/Pernambuco.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/pe.png",
     },
     Piaui: {
         Nome: "Piauí",
@@ -1108,7 +1125,8 @@ data = {
         Imagem3: "img/imagens/pi/pi3.jpg",
         Images: [
             "img/Piaui.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/pi.png",
     },
     RiodeJaneiro: {
         Nome: "Rio de Janeiro",
@@ -1169,7 +1187,8 @@ data = {
         Imagem3: "img/imagens/rj/rj3.jpg",
         Images: [
             "img/RJ.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/rj.png",
     },
     RioGrandedoNorte: {
         Nome: "Rio Grande do Norte",
@@ -1230,7 +1249,8 @@ data = {
         Imagem3: "img/imagens/rn/rn3.jpg",
         Images: [
             "img/RGDN.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/rn.png",
     },
     RioGrandedoSul: {
         Nome: "Rio Grande do Sul",
@@ -1291,7 +1311,8 @@ data = {
         Imagem3: "img/imagens/rs/rs3.jfif",
         Images: [
             "img/RGDS.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/rs.png",
     },
     Rondonia: {
         Nome: "Rondônia",
@@ -1352,7 +1373,8 @@ data = {
         Imagem3: "img/imagens/ro/ro3.png",
         Images: [
             "img/Rondonia.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/ro.png",
     },
     Roraima: {
         Nome: "Roraima",
@@ -1417,7 +1439,8 @@ data = {
         Imagem3: "img/imagens/rr/rr3.jpg",
         Images: [
             "img/Roraima.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/rr.png",
     },
     SantaCatarina: {
         Nome: "Santa Catarina",
@@ -1478,7 +1501,8 @@ data = {
         Imagem3: "img/imagens/sc/sc3.jpg",
         Images: [
             "img/SantaCatarina.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/sc.png",
     },
     SaoPaulo: {
         Nome: "São Paulo",
@@ -1538,7 +1562,8 @@ data = {
         Imagem3: "img/imagens/sp/sp3.jpg",
         Images: [
             "img/SP.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/sp.png",
     },
     Sergipe: {
         Nome: "Sergipe",
@@ -1598,7 +1623,8 @@ data = {
         Imagem3: "img/imagens/se/se3.jpg",
         Images: [
             "img/Sergipe.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/se.png",
     },
     Tocantins: {
         Nome: "Tocantins",
@@ -1658,7 +1684,8 @@ data = {
         Imagem3: "img/imagens/to/to3.jpg",
         Images: [
             "img/Tocantins.png"
-        ]
+        ],
+        Imagem_movel: "img/imagens/to.png",
     },
     Padrao:{
         Capital: "",
