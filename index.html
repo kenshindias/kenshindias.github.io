@@ -308,6 +308,29 @@
           background-color: #2196F3;
           color: #fff;
         }
+        .div-table {
+            display: table;         
+            width: 900px;                
+            border-spacing: 5px; 
+        }
+        .div-table-row {
+            display: table-row;
+            width: auto;
+            clear: both;
+        }
+        .div-table-col {
+            float: left; 
+            display: table-column;         
+            width: 350px;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .div-table-col2 {
+            float: left; 
+            display: table-column;         
+            width: 550px;  
+            margin-bottom: 5px;  
+        }
         </style>
     </head>
 
@@ -749,74 +772,47 @@
                             <input type="radio" id="tab1" class="rd_tab" name="tabs" checked> 
                             <label for="tab1" class="tab_label">GERAL</label>
                             <div class="tab-content">
-                                <div id = "container" style = "text-align: center;">                         
-                                    <!--INICIO TABELA-->
-                                    <table id = "tabela" style = "display: block; text-align: left;">
-                                      <tr>
-                                        <td>Nome Estado</td>
-                                        <td>
-                                            <td id = "nome_estado" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Capital</td>
-                                        <td>
-                                          <td id = "nome_capital" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Data de fundação</td>
-                                        <td>
-                                          <td id = "data_fundacao" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Tamanho da área em Km²</td>
-                                        <td>
-                                          <td id = "tamanho_area" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Número de Municípios</td>
-                                        <td>
-                                          <td id = "n_municipios" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Municípios mais importantes</td>
-                                        <td>
-                                          <td id = "mun_import" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>População</td>
-                                        <td>
-                                          <td id = "populacao" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Densidade populacional</td>
-                                        <td>
-                                          <td id = "d_populacional" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Fuso Horário</td>
-                                        <td>
-                                          <td id = "fuso" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                    <!--FINAL TABELA-->
-
+                                <div id = "container">                         
+                                    <form id="form1">
+                                        <div class="div-table">
+                                            <div class="div-table-row">
+                                                <div class = "div-table-col">Nome Estado</div>
+                                                <div class = "div-table-col2" id = "nome_estado"></div>
+                                            </div>
+                                            <div class="div-table-row">
+                                                <div class = "div-table-col">Nome Capital</div>
+                                                <div class = "div-table-col2" id = "nome_capital"></div>
+                                            </div>
+                                            <div class="div-table-row">
+                                                <div class="div-table-col">Data de Fundação</div>
+                                                <div class="div-table-col2" id = "data_fundacao"></div>
+                                            </div>
+                                            <div class="div-table-row">
+                                                <div class="div-table-col">Tamanho da Área</div> 
+                                                <div class="div-table-col2" id = "tamanho_area"></div>
+                                            </div>
+                                            <div class="div-table-row">
+                                                <div class="div-table-col">Número de Municípios</div>
+                                                <div class="div-table-col2" id = "n_municipios"></div>
+                                            </div>
+                                            <div class="div-table-row">
+                                                <div class="div-table-col">Maiores Municípios</div> 
+                                                <div class="div-table-col2" id = "mun_import"></div>
+                                            </div>
+                                            <div class="div-table-row">
+                                                <div class="div-table-col">População Estimada</div>
+                                                <div class="div-table-col2" id = "populacao"></div>
+                                            </div>
+                                            <div class="div-table-row">
+                                                <div class="div-table-col">Densidade Populacional</div>
+                                                <div class="div-table-col2" id = "d_populacional"></div>
+                                            </div>
+                                            <div class="div-table-row">
+                                                <div class="div-table-col">Fuso Horário</div> 
+                                                <div class="div-table-col2" id = "fuso"></div>     
+                                            </div>
+                                        </div>
+                                    </form>
                                     <!--SHOW DE SLIDES-->
                                     <div id = "slides_background">
                                       <div class="slideshow-container">
@@ -848,59 +844,39 @@
                             <input type="radio" name="tabs" class="rd_tab" id="tab2">
                             <label for="tab2" class="tab_label">ECONOMIA</label>
                             <div class="tab-content">
-                                <div id = "container" style = "text-align: center;">                          
-                                    <!--INICIO TABELA-->
-                                    <table id = "tabela" style = "display: block; text-align: left;">
-                                      <tr>
-                                        <td>PIB</td>
-                                        <td>
-                                            <td id = "pib" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>PIB per capita</td>
-                                        <td>
-                                          <td id = "pib_percapita" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Arrecadação Pública</td>
-                                        <td>
-                                          <td id = "arrec_publ" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Arrecadação Pública Per Capita</td>
-                                        <td>
-                                          <td id = "arrec_publ_per_capita" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Principais Produtos agrícolas para exportação</td>
-                                        <td>
-                                          <td id = "prod_expo" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Principais Indústrias</td>
-                                        <td>
-                                          <td id = "principais_industrias" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Total de Exportação em Reais</td>
-                                        <td>
-                                          <td id = "expo_reais" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                    </table>
-                                    <!--FINAL TABELA-->
+                                <div id = "container">                          
+                                  <form id="form1">
+                                    <div class="div-table">
+                                        <div class="div-table-row">
+                                            <div class="div-table-col">PIB</div>
+                                            <div class = "div-table-col2" id = "pib"></div>
+                                        </div>
+                                        <div class="div-table-row">
+                                            <div class = "div-table-col">PIB Per Capta</div>
+                                            <div class = "div-table-col2" id = "pib_percapita"></div>
+                                        </div>
+                                        <div class="div-table-row">
+                                            <div class="div-table-col">Arrecadação Pública</div>
+                                            <div class = "div-table-col2" id = "arrec_publ"></div>
+                                        </div>
+                                        <div class="div-table-row">
+                                            <div class="div-table-col">Arrecadação Pública Per Capta</div> 
+                                            <div class = "div-table-col2" id = "arrec_publ_per_capita"></div>
+                                        </div>
+                                        <div class="div-table-row">
+                                            <div class="div-table-col">Produtos Exportados</div>
+                                            <div class = "div-table-col2" id = "prod_expo"></div>
+                                        </div>
+                                        <div class="div-table-row">
+                                            <div class="div-table-col">Principais Indústrias</div> 
+                                            <div class = "div-table-col2" id = "principais_industrias"></div>
+                                        </div>
+                                        <div class="div-table-row">
+                                            <div class="div-table-col">Exportação em Reais</div>
+                                            <div class = "div-table-col2" id = "expo_reais"></div>
+                                        </div>
+                                    </div>
+                                </form>
                                 </div>
                             </div>
                         </li>
@@ -908,68 +884,47 @@
                             <input type="radio" name="tabs" class="rd_tab" id="tab3">
                             <label for="tab3" class="tab_label">POLÍTICA</label>
                             <div class="tab-content">
-                              <div id = "container" style = "text-align: center;">                          
-                                  <!--INICIO TABELA-->
-                                  <table id = "tabela" style = "display: block; text-align: left;">
-                                      <tr>
-                                        <td>Governador</td>
-                                        <td>
-                                            <td id = "gov" style="font-weight: bold;">
-                                            </td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Vice-Governador</td>
-                                        <td>
-                                          <td id = "vice_gov" style="font-weight: bold;">
-                                          </td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Presidente da Assembleia Legislativa</td>
-                                        <td>
-                                          <td id = "presi_assem" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Quantidade de Deputados Estaduais</td>
-                                        <td>
-                                          <td id = "qtd_dep_est" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                          <td>Quantidade de Deputados Federais</td>
-                                          <td>
-                                            <td id = "qtd_dep_fed" style="font-weight: bold;"></td>
-                                          </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>3 Maiores Bancadas de Deputados Estaduais</td>
-                                        <td>
-                                          <td id = "maiores_bancadas_dep_est" style="font-weight: bold;"></td>
-                                        </td>
-                                      </tr>
-                                  
-                                      <tr>
-                                        <td>Senadores</td>
-                                        <td>
-                                          <td id = "senador1" style="font-weight: bold;">
-                                              <td id = "senador2" style="font-weight: bold;">
-                                                  <td id = "senador3" style="font-weight: bold;">
-        
-                                                  </td>
-                                              </td>
-                                          </td>
-                              
-                                        </td>
-                                      </tr>
-                                    </table>
-                                    <!--FINAL TABELA-->
+                              <div id = "container">                          
+                                <form id="form1">
+                                  <div class="div-table">
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Governador</div>
+                                          <div class = "div-table-col2" id = "gov"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class = "div-table-col">Vice Governador</div>
+                                          <div class = "div-table-col2" id = "vice_gov"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Presidente da Assembléia</div>
+                                          <div class = "div-table-col2" id = "presi_assem"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Quantidade de Deputados Estaduais</div> 
+                                          <div class = "div-table-col2" id = "qtd_dep_est"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Quantidade de Deputados Federais</div>
+                                          <div class = "div-table-col2" id = "qtd_dep_fed"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Maiores Bancadas</div> 
+                                          <div class = "div-table-col2" id = "maiores_bancadas_dep_est"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Senador</div>
+                                          <div class = "div-table-col2" id = "senador1"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Senador</div>
+                                          <div class = "div-table-col2" id = "senador2"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Senador</div>
+                                          <div class = "div-table-col2" id = "senador3"></div>
+                                      </div>
+                                  </div>
+                              </form>
                               </div>
                             </div>
                         </li>
@@ -977,67 +932,43 @@
                             <input type="radio" name="tabs" class="rd_tab" id="tab4">
                             <label for="tab4" class="tab_label">SOCIAL</label>
                             <div class="tab-content">
-                              <div id = "container" style = "text-align: center;">                          
-                                  <!--INICIO TABELA-->
-                                  <table id = "tabela" style = "display: block; text-align: left;">
-                                    <tr>
-                                      <td>Expectativa de Vida</td>
-                                      <td>
-                                          <td id = "expc_vida" style="font-weight: bold;"></td>
-                                      </td>
-                                    </tr>
-                                
-                                    <tr>
-                                      <td>Mortalidade Infantil</td>
-                                      <td>
-                                        <td id = "mort_inf" style="font-weight: bold;"></td>
-                                      </td>
-                                    </tr>
-                                
-                                    <tr>
-                                      <td>Alfabetização</td>
-                                      <td>
-                                        <td id = "alfabetizacao" style="font-weight: bold;"></td>
-                                      </td>
-                                    </tr>
-                                
-                                    <tr>
-                                      <td>IDH</td>
-                                      <td>
-                                        <td id = "idh" style="font-weight: bold;"></td>
-                                      </td>
-                                    </tr>
-                                
-                                    <tr>
-                                        <td>Renda Per Capita</td>
-                                        <td>
-                                          <td id = "renda_per_capita" style="font-weight: bold;"></td>
-                                        </td>
-                                    </tr>
-                                
-                                    <tr>
-                                      <td>Taxa de Pessoas com ensino Médio Completo</td>
-                                      <td>
-                                        <td id = "ensino_me_completo" style="font-weight: bold;"></td>
-                                      </td>
-                                    </tr>
-                                
-                                    <tr>
-                                      <td>Taxa de Pessoas com ensino Superior Completo</td>
-                                      <td>
-                                        <td id = "ensino_su_completo" style="font-weight: bold;"></td>
-                                      </td>
-                                    </tr>
-        
-                                    <tr>
-                                        <td>Taxa de Domicílios com acesso à Internet</td>
-                                        <td>
-                                          <td id = "dom_internet" style="font-weight: bold;"></td>
-                                        </td>
-                                    </tr>
-        
-                                  </table>
-                                  <!--FINAL TABELA-->
+                              <div id = "container">                          
+                                <form id="form1">
+                                  <div class="div-table">
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Expectativa de Vida</div>
+                                          <div class = "div-table-col2" id = "expc_vida"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class = "div-table-col">Mortalidade Infantil</div>
+                                          <div class = "div-table-col2" id = "mort_inf"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Taxa de Alfabetização</div>
+                                          <div class = "div-table-col2" id = "alfabetizacao"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Índice de Desenvolvimento Humano (IDH)</div> 
+                                          <div class = "div-table-col2" id = "idh"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Renda Per Capta</div>
+                                          <div class = "div-table-col2" id = "renda_per_capita"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Taxa de Conclusão do Ensino Médio</div> 
+                                          <div class = "div-table-col2" id = "ensino_me_completo"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Taxa de Conclusão do Ensino Supeior</div>
+                                          <div class = "div-table-col2" id = "ensino_su_completo"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Taxa de Domicílios com Internet</div>
+                                          <div class = "div-table-col2" id = "dom_internet"></div>
+                                      </div>
+                                  </div>
+                              </form>
                               </div>   
                             </div>
                         </li>
@@ -1045,24 +976,19 @@
                             <input type="radio" name="tabs" class="rd_tab" id="tab5">
                             <label for="tab5" class="tab_label">CULTURA</label>
                             <div class="tab-content">
-                              <div id = "container" style = "text-align: center;">    
-                                  <!--INICIO TABELA-->
-                                  <table id = "tabela" style = "display: block; text-align: left;">
-                                    <tr>
-                                      <td>Etnia</td>
-                                      <td>
-                                          <td id = "etnia" style="font-weight: bold;"></td>
-                                      </td>
-                                    </tr>
-                                
-                                    <tr>
-                                      <td>Principais Religiões</td>
-                                      <td>
-                                        <td id = "religioes" style="font-weight: bold;"></td>
-                                      </td>
-                                    </tr>
-                                  </table>
-                                  <!--FINAL TABELA-->                      
+                              <div id = "container">    
+                                <form id="form1">
+                                  <div class="div-table">
+                                      <div class="div-table-row">
+                                          <div class="div-table-col">Distibuição de Etnias</div>
+                                          <div class = "div-table-col2" id = "etnia"></div>
+                                      </div>
+                                      <div class="div-table-row">
+                                          <div class = "div-table-col">Distribuição de Religiões</div>
+                                          <div class = "div-table-col2" id = "religioes"></div>
+                                      </div>
+                                  </div>
+                                </form>                            
                               </div>
                             </div>
                         </li>
@@ -1070,46 +996,37 @@
                           <input type="radio" name="tabs" class="rd_tab" id="tab6">
                           <label for="tab6" class="tab_label">NATUREZA</label>
                           <div class="tab-content">
-                            <div id = "container" style = "text-align: center;">                          
-                                <!--INICIO TABELA-->
-                                <table id = "tabela" style = "display: block; text-align: left;">
-                                  <tr>
-                                    <td>Principais Rios</td>
-                                    <td>
-                                        <td id = "rio" style="font-weight: bold;"></td>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Clima</td>
-                                    <td>
-                                      <td id = "clima" style="font-weight: bold;"></td>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Vegetação</td>
-                                    <td>
-                                      <td id = "vegetacao" style="font-weight: bold;"></td>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Relevo e geologia</td>
-                                    <td>
-                                      <td id = "relevo" style="font-weight: bold;"></td>
-                                    </td>
-                                  </tr>
-                                  <tr>
-                                    <td>Principais divisões do Estado</td>
-                                    <td>
-                                      <td id = "divisao" style="font-weight: bold;"></td>
-                                    </td>
-                                  </tr>
-                                </table>
-                                <!--FINAL TABELA-->
+                            <div id = "container">                          
+                              <form id="form1">
+                                <div class="div-table">
+                                    <div class="div-table-row">
+                                        <div class="div-table-col">Principais Rios</div>
+                                        <div class = "div-table-col2" id = "rio"></div>
+                                    </div>
+                                    <div class="div-table-row">
+                                        <div class = "div-table-col">Climas Predominantes</div>
+                                        <div class = "div-table-col2" id = "clima"></div>
+                                    </div>
+                                    <div class="div-table-row">
+                                        <div class="div-table-col">Vegetações Predominantes</div>
+                                        <div class = "div-table-col2" id = "vegetacao"></div>
+                                    </div>
+                                    <div class="div-table-row">
+                                        <div class="div-table-col">Relevo</div> 
+                                        <div class = "div-table-col2" id = "relevo"></div>
+                                    </div>
+                                    <div class="div-table-row">
+                                        <div class="div-table-col">Divisão</div>
+                                        <div class = "div-table-col2" id = "divisao"></div>
+                                    </div>
+                                </div>
+                              </form> 
                             </div>
                           </div>
                       </li>
                     </ul>
                 </nav>
+
                 <div id = "fonte">
                   <h3>Fonte dos Dados</h3>
                   <p>Todos os dados foram retirados da Wikipédia, do site do IBGE(2010), e do Portal da Industria(2019)</p><br>
