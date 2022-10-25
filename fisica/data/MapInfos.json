@@ -1,9 +1,9 @@
 [
 null,
-{"id":1,"expanded":false,"name":"Electron","order":5,"parentId":0,"scrollX":1404,"scrollY":790.2857142857142},
-{"id":2,"expanded":false,"name":"Resistência, Corrente e Tensão","order":3,"parentId":0,"scrollX":1404,"scrollY":790.2857142857142},
-{"id":3,"expanded":false,"name":"Carga e Força Elétrica","order":4,"parentId":0,"scrollX":1404,"scrollY":790.2857142857142},
+{"id":1,"expanded":false,"name":"Electron","order":5,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
+{"id":2,"expanded":false,"name":"Resistência, Corrente e Tensão","order":3,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
+{"id":3,"expanded":false,"name":"Carga e Força Elétrica","order":4,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
 {"id":4,"expanded":false,"name":"Inicio","order":6,"parentId":0,"scrollX":1404,"scrollY":790.2857142857142},
-{"id":5,"expanded":false,"name":"Leis de Kirchhoff","order":1,"parentId":0,"scrollX":1404,"scrollY":790.2857142857142},
-{"id":6,"expanded":false,"name":"Associação de Resistores","order":2,"parentId":0,"scrollX":1404,"scrollY":790.2857142857142}
+{"id":5,"expanded":false,"name":"Leis de Kirchhoff","order":1,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
+{"id":6,"expanded":false,"name":"Associação de Resistores","order":2,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666}
 ]
