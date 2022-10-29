@@ -4,10 +4,10 @@ null,
 {"id":2,"expanded":false,"name":"Pavilhão Inicial 1","order":1,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
 {"id":3,"expanded":false,"name":"Templo de Grau 1","order":5,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
 {"id":4,"expanded":false,"name":"Templo de Grau 2","order":6,"parentId":0,"scrollX":1081.3333333333333,"scrollY":614.6666666666666},
-{"id":5,"expanded":false,"name":"Pavilhão Inicial 3","order":3,"parentId":0,"scrollX":1081.2,"scrollY":543.6},
+{"id":5,"expanded":false,"name":"Pavilhão Inicial 3","order":3,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
 {"id":6,"expanded":false,"name":"Pavilhão Inicial 4","order":4,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
-{"id":7,"expanded":false,"name":"Templo Exponencial","order":7,"parentId":0,"scrollX":1270.6666666666667,"scrollY":613.3333333333334},
-{"id":8,"expanded":false,"name":"Início","order":9,"parentId":0,"scrollX":982.8,"scrollY":553.1999999999999},
+{"id":7,"expanded":false,"name":"Templo Exponencial","order":7,"parentId":0,"scrollX":1270.6666666666667,"scrollY":604},
+{"id":8,"expanded":false,"name":"Início","order":9,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666},
 {"id":9,"expanded":false,"name":"Templo dos Logarítmos ","order":8,"parentId":0,"scrollX":1384,"scrollY":1069.3333333333333},
-{"id":10,"expanded":false,"name":"FINAL","order":10,"parentId":0,"scrollX":982.8,"scrollY":553.1999999999999}
+{"id":10,"expanded":false,"name":"FINAL","order":10,"parentId":0,"scrollX":1092,"scrollY":614.6666666666666}
 ]
