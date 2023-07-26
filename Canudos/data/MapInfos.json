@@ -1,0 +1,21 @@
+[
+null,
+{"id":1,"expanded":false,"name":"Inicio","order":1,"parentId":0,"scrollX":3892.7999999999997,"scrollY":7886.4},
+{"id":2,"expanded":true,"name":"vila inicial","order":2,"parentId":0,"scrollX":3931.2,"scrollY":2193.6},
+{"id":3,"expanded":false,"name":"Campo de batalha - Uauá","order":6,"parentId":0,"scrollX":3931.2,"scrollY":2193.6},
+{"id":4,"expanded":false,"name":"testes","order":18,"parentId":0,"scrollX":540.6666666666666,"scrollY":316.6666666666667},
+{"id":5,"expanded":false,"name":"casa 1","order":3,"parentId":2,"scrollX":3931.2,"scrollY":2193.6},
+{"id":6,"expanded":false,"name":"casa 1","order":10,"parentId":13,"scrollX":4368,"scrollY":2458.6666666666665},
+{"id":7,"expanded":false,"name":"Igreja","order":15,"parentId":13,"scrollX":4368,"scrollY":2458.6666666666665},
+{"id":8,"expanded":false,"name":"Quartel General","order":5,"parentId":0,"scrollX":3931.2,"scrollY":2193.6},
+{"id":9,"expanded":false,"name":"campo de batalha 3","order":7,"parentId":0,"scrollX":1955.9999999999998,"scrollY":776.5714285714286},
+{"id":10,"expanded":false,"name":"campo de batalha 2","order":8,"parentId":0,"scrollX":3931.2,"scrollY":2193.6},
+{"id":11,"expanded":false,"name":"casa 2","order":11,"parentId":13,"scrollX":728,"scrollY":409.77777777777777},
+{"id":12,"expanded":false,"name":"casa 3","order":12,"parentId":13,"scrollX":728,"scrollY":409.77777777777777},
+{"id":13,"expanded":true,"name":"Canudos 2","order":9,"parentId":0,"scrollX":4267.2,"scrollY":5812.8},
+{"id":14,"expanded":false,"name":"casa 2","order":4,"parentId":2,"scrollX":3931.2,"scrollY":2193.6},
+{"id":15,"expanded":true,"name":"Canudos Final","order":17,"parentId":0,"scrollX":4814.4,"scrollY":8678.4},
+{"id":16,"expanded":false,"name":"casa 4","order":13,"parentId":13,"scrollX":2184,"scrollY":1229.3333333333333},
+{"id":17,"expanded":false,"name":"casa 5","order":14,"parentId":13,"scrollX":3931.2,"scrollY":2193.6},
+{"id":18,"expanded":false,"name":"Loja do Mascate","order":16,"parentId":13,"scrollX":3931.2,"scrollY":2193.6}
+]
