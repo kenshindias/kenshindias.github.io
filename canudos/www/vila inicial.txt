@@ -1,0 +1,256 @@
+
+・EV001
+-1ページ目
+
+・npc 1
+-1ページ目
+Opa João! Estamos com um problema lá na 
+fazenda do patrão! Era bom a gente adiantar
+você não acha?
+Bom dia, Zé... É o jeito. Essa seca não deu
+trégua nem pra que tem dinheiro...
+Pois é... tô ouvindo muita gente falando
+que vai tentar a vida na capital...
+Por aqui ta muito difícil...
+Nem me fale...
+Quem é esse povo?
+Meu Deus... É Antônio Conselheiro!
+Quem?
+É um beato que anda esse sertão todo 
+construindo igreja e cemitério...
+Eu vou ver o que esse povo quer aqui.
+-2ページ目
+Melhor dar uma olhada!
+-3ページ目
+
+・npc 2
+-1ページ目
+Essa seca ta demais, João... Não temos mais
+nem água pras plantação! As criação tudo
+vão morrer de sede!
+-2ページ目
+
+・npc 3
+-1ページ目
+Tô com fome, tio... Tem alguma coisa ai?
+-2ページ目
+
+・npc 4
+-1ページ目
+Minha mãe disse que a gente vai pra capital
+É muito longe?
+-2ページ目
+
+・npc 5
+-1ページ目
+Se continuar assim vamos todos morrer...
+Tua sorte é que tu trabalha pro coronel...
+-2ページ目
+
+・trigger 1
+-1ページ目
+<CENTER>USE O BOTÃO ENTER DO SEU TECLADO PARA INTERAGIR COM
+PESSOAS OU OBJETOS!</CENTER>
+<CENTER>OS OBJETOS QUE ESTIVEREM BRILHANDO SÃO INTERATIVOS</CENTER>
+<CENTER>EXPLORE UM POUCO!</CENTER>
+-2ページ目
+
+・brilho
+-1ページ目
+É apenas um cacto.
+
+・conselheiro
+-1ページ目
+-2ページ目
+-3ページ目
+ESCUTEM TODOS! EU JÁ CAMINHEI MAIS DE MIL
+LÉGUAS DESSE SERTÃO DE MEU BOM DEUS!
+EU NUNCA VI TANTA POBREZA!\.\. TANTA TRISTEZA!\.\.
+FOMOS ABANDONADOS POR AQUELES QUE DEVERIAM
+CUIDAR DE NÓS!
+ESSA LÁSTIMA QUE TOMOU O PODER A FORÇA, 
+CHAMADA DE REPÚBLICA!
+AGORA QUEREM NOS TOMAR AQUILO QUE NUNCA
+NOS DERAM! IMPOSTOS! COMO SE TIVÉSSEMOS 
+COMO PAGAR ALGO ASSIM!
+ELES TOMAM NÃO SÓ NOSSO DINHEIRO, MAS
+TAMBÉM TOMAM NOSSA DIGNIDADE! NÃO PODEMOS
+ACEITAR TAIS COISAS!
+JÁ NÃO BASTA A BLASFÊMIA QUE FIZERAM COM 
+A CRIAÇÃO DESSA OBRA DO TINHOSO CHAMADA
+CASAMENTO CIVIL!
+O CASAMENTO FORA DA IGREJA NÃO EXISTE! É
+COISA DO ANTI-CRISTO! NOSSA IGREJA ESTÁ 
+ENFRAQUECIDA POR CONTA DESSES DEMÔNIOS
+QUE TOMARAM O PODER!
+MAS EU VOS DIGO, MEUS IRMÃOS! NÃO TEMAM!
+O PRÓPRIO JESUS CRISTO VEIO A MIM EM SONHO
+E ME CONTOU SOBRE NOSSA TERRA PROMETIDA!
+LÁ TEREMOS PROTEÇÃO! LÁ SEREMOS ABENÇOADOS
+E VIVEREMOS DA TERRA!
+LOUVADO SEJA NOSSO SENHOR JESUS CRISTO!
+-4ページ目
+-5ページ目
+
+・npc do conselheiro 1
+-1ページ目
+-2ページ目
+-3ページ目
+
+・npc do conselheiro 3
+-1ページ目
+-2ページ目
+-3ページ目
+
+・npc do conselheiro 4
+-1ページ目
+-2ページ目
+Senhor, quem é esse homem?
+Antônio Conselheiro! Ele é quem nos salvará
+das barbaridades dessa nova república!
+Seremos salvos se o acompanharmos!
+Você quer sair dessa miséria e ter um 
+pingo de dignidade?
+Claro que eu quero!
+Então nos siga, e verá que Conselheiro
+nos guiará para nossa terra prometida!
+-3ページ目
+
+・npc do conselheiro 2
+-1ページ目
+-2ページ目
+Senhora, quem é esse homem?
+Esse é nosso salvador, Antônio Conselheiro!
+Ele vai nos guiar e nos tirar dessa miséria!
+Como?
+Só confie nele que você verá!
+Você quer sair dessa miséria e ter um pouco
+de dignidade?
+Claro que eu quero!
+Pois nos acompanhe! Você não se arrependerá!
+-3ページ目
+
+・trigger 2
+-1ページ目
+-2ページ目
+
+・npc 2
+-1ページ目
+A senhora sabe quem é esse homem?
+É só mais um que se cansou disso tudo e 
+resolveu fazer alguma coisa...
+Parece que era do Ceará esse ai.
+
+・npc 1
+-1ページ目
+
+・npc 5
+-1ページ目
+O senhor sabe quem é?
+Esse é o Conselheiro... Ele perambula esse
+sertão de meu Deus ajudando e aconselhando 
+os mais necessitados... 
+Sua fama já está bem grande... agora eu 
+não sei o que ele está fazendo com tantos
+seguidores assim.
+
+・npc 3
+-1ページ目
+Quem é esse homem, tio?
+
+・npc 4
+-1ページ目
+
+・trigger 2
+-1ページ目
+-2ページ目
+
+・trigger 2
+-1ページ目
+-2ページ目
+
+・trigger 2
+-1ページ目
+-2ページ目
+
+・trigger 2
+-1ページ目
+-2ページ目
+
+・EV024
+-1ページ目
+
+・EV025
+-1ページ目
+
+・EV026
+-1ページ目
+
+・EV027
+-1ページ目
+
+・npc do conselheiro 2
+-1ページ目
+-2ページ目
+Senhora, quem é esse homem?
+Esse é nosso salvador, Antônio Conselheiro!
+Ele vai nos guiar e nos tirar dessa miséria!
+Como?
+Só confie nele que você verá!
+Você quer sair dessa miséria e ter um pouco
+de dignidade?
+Claro que eu quero!
+Pois nos acompanhe! Você não se arrependerá!
+
+・npc do conselheiro 4
+-1ページ目
+-2ページ目
+Senhor, quem é esse homem?
+Antônio Conselheiro! Ele é quem nos salvará
+das barbaridades dessa nova república!
+Seremos salvos se o acompanharmos!
+Você quer sair dessa miséria e ter um 
+pingo de dignidade?
+Claro que eu quero!
+Então nos siga, e verá que Conselheiro
+nos guiará para nossa terra prometida!
+
+・npc do conselheiro 1
+-1ページ目
+-2ページ目
+
+・npc do conselheiro 3
+-1ページ目
+-2ページ目
+
+・conselheiro
+-1ページ目
+-2ページ目
+-3ページ目
+ESCUTEM TODOS! EU JÁ CAMINHEI MAIS DE MIL
+LÉGUAS DESSE SERTÃO DE MEU BOM DEUS!
+EU NUNCA VI TANTA POBREZA!\.\. TANTA TRISTEZA!\.\.
+FOMOS ABANDONADOS POR AQUELES QUE DEVERIAM
+CUIDAR DE NÓS!
+ESSA LÁSTIMA QUE TOMOU O PODER A FORÇA, 
+CHAMADA DE REPÚBLICA!
+AGORA QUEREM NOS TOMAR AQUILO QUE NUNCA
+NOS DERAM! IMPOSTOS! COMO SE TIVÉSSEMOS 
+COMO PAGAR ALGO ASSIM!
+ELES TOMAM NÃO SÓ NOSSO DINHEIRO, MAS
+TAMBÉM TOMAM NOSSA DIGNIDADE! NÃO PODEMOS
+ACEITAR TAIS COISAS!
+JÁ NÃO BASTA A BLASFÊMIA QUE FIZERAM COM 
+A CRIAÇÃO DESSA OBRA DO TINHOSO CHAMADA
+CASAMENTO CIVIL!
+O CASAMENTO FORA DA IGREJA NÃO EXISTE! É
+COISA DO ANTI-CRISTO! NOSSA IGREJA ESTÁ 
+ENFRAQUECIDA POR CONTA DESSES DEMÔNIOS
+QUE TOMARAM O PODER!
+MAS EU VOS DIGO, MEUS IRMÃOS! NÃO TEMAM!
+O PRÓPRIO JESUS CRISTO VEIO A MIM EM SONHO
+E ME CONTOU SOBRE NOSSA TERRA PROMETIDA!
+LÁ TEREMOS PROTEÇÃO! LÁ SEREMOS ABENÇOADOS
+E VIVEREMOS DA TERRA!
+LOUVADO SEJA NOSSO SENHOR JESUS CRISTO!
+-4ページ目

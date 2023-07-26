@@ -1,0 +1,13 @@
+[
+null,
+{"id":1,"list":[{"code":250,"indent":0,"parameters":[{"name":"Battle4","volume":90,"pitch":100,"pan":0}]},{"code":101,"indent":0,"parameters":["João",3,0,1]},{"code":401,"indent":0,"parameters":[""]},{"code":401,"indent":0,"parameters":["POR NOSSO BOM CONSELHEIRO!"]},{"code":0,"indent":0,"parameters":[]}],"name":"Batalha: João","switchId":1,"trigger":0},
+{"id":2,"list":[{"code":250,"indent":0,"parameters":[{"name":"Battle4","volume":90,"pitch":100,"pan":0}]},{"code":101,"indent":0,"parameters":["pajeú",1,0,1]},{"code":401,"indent":0,"parameters":[""]},{"code":401,"indent":0,"parameters":["ESSE TIRO AQUI É PELO MEU BELO MONTE!"]},{"code":0,"indent":0,"parameters":[]}],"name":"Batalha: Pajeú","switchId":1,"trigger":0},
+{"id":3,"list":[{"code":250,"indent":0,"parameters":[{"name":"Battle4","volume":90,"pitch":100,"pan":0}]},{"code":101,"indent":0,"parameters":["Juliano",0,0,1]},{"code":401,"indent":0,"parameters":[""]},{"code":401,"indent":0,"parameters":["VAMO ACABAR COM A RAÇA DA REPÚBLICA!"]},{"code":0,"indent":0,"parameters":[]}],"name":"Batalha: Juliano","switchId":1,"trigger":0},
+{"id":4,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":5,"list":[{"code":250,"indent":0,"parameters":[{"name":"Battle4","volume":90,"pitch":100,"pan":0}]},{"code":101,"indent":0,"parameters":["João",3,0,1]},{"code":401,"indent":0,"parameters":[""]},{"code":401,"indent":0,"parameters":["COMAM CHUMBO, DESGRAÇADOS!"]},{"code":0,"indent":0,"parameters":[]}],"name":"Batalha: João","switchId":1,"trigger":0},
+{"id":6,"list":[{"code":250,"indent":0,"parameters":[{"name":"Battle4","volume":90,"pitch":100,"pan":0}]},{"code":101,"indent":0,"parameters":["pajeú",1,0,1]},{"code":401,"indent":0,"parameters":[""]},{"code":401,"indent":0,"parameters":["EU VOU CORTAR VOCÊS TODOS!"]},{"code":0,"indent":0,"parameters":[]}],"name":"Batalha: Pajeú","switchId":1,"trigger":0},
+{"id":7,"list":[{"code":250,"indent":0,"parameters":[{"name":"Battle4","volume":90,"pitch":100,"pan":0}]},{"code":101,"indent":0,"parameters":["Juliano",0,0,1]},{"code":401,"indent":0,"parameters":[""]},{"code":401,"indent":0,"parameters":["ESSE TIRO VAI MANDAR VOCÊS PRO INFERNO!"]},{"code":0,"indent":0,"parameters":[]}],"name":"Batalha: Juliano","switchId":1,"trigger":0},
+{"id":8,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":9,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0},
+{"id":10,"list":[{"code":0,"indent":0,"parameters":[]}],"name":"","switchId":1,"trigger":0}
+]
