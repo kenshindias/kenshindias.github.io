@@ -137,6 +137,13 @@
           <label><input type="radio" name="firstTeam" id="firstRed" value="red" checked> Equipe Vermelha</label>
           <label><input type="radio" name="firstTeam" id="firstBlue" value="blue"> Equipe Azul</label>
         </fieldset>
+        <fieldset class="choice">
+          <legend>Configurações de Som</legend>
+          <label>
+            <input type="checkbox" id="toggleBgm" checked>
+            Música de fundo
+          </label>
+        </fieldset>
         <div class="actions">
           <button id="btnStart" class="btn btn-primary">Iniciar jogo</button>
         </div>
@@ -159,6 +166,8 @@
     <audio id="sndLaunch" src="launch.mp3" preload="auto"></audio>
     <audio id="sndHit" src="hit.mp3" preload="auto"></audio>
     <audio id="sndEnd" src="end.mp3" preload="auto"></audio>
+    <!-- Música de fundo -->
+    <audio id="sndBgm" src="bgm.mp3" preload="auto" loop></audio>
   </div>
 
   <!-- Script no final do body -->
@@ -174,6 +183,8 @@
     const sndLaunch = document.getElementById('sndLaunch');
     const sndHit = document.getElementById('sndHit');
     const sndEnd = document.getElementById('sndEnd');
+    const sndBgm = document.getElementById('sndBgm');
+    let bgmEnabled = true;
 
     // ----- Alvo geométrico -----
     const target = {
@@ -227,6 +238,7 @@
     const firstRed = document.getElementById('firstRed');
     const firstBlue = document.getElementById('firstBlue');
     const dirModeEl = document.getElementById('dirMode');
+    const toggleBgm = document.getElementById('toggleBgm');
     let shotMode = (dirModeEl && dirModeEl.value) ? dirModeEl.value : 'opposite';
     let startTeam = 'red';
 
@@ -570,6 +582,7 @@
       footerMsg.textContent = 'Selecione quem começa e clique em "Iniciar jogo".';
       menuOverlay.classList.add('show');
       menuOverlay.style.display = 'flex';
+      try { sndBgm.pause(); } catch(_) {}
       // Não zeramos o placar aqui; o reset completo ocorre ao iniciar pelo menu (startGame -> doNewMatch)
     });
 
@@ -620,14 +633,44 @@
       });
     }
 
+    // Música de fundo: controle no menu
+    if (toggleBgm) {
+      toggleBgm.addEventListener('change', function(){
+        bgmEnabled = toggleBgm.checked;
+        if (bgmEnabled) {
+          try { sndBgm.currentTime = 0; sndBgm.volume = 0.4; sndBgm.play(); } catch(_){}
+        } else {
+          try { sndBgm.pause(); } catch(_){}
+        }
+      });
+      // Estado inicial coerente com o checkbox
+      bgmEnabled = toggleBgm.checked;
+    }
+
     // Menu / início
-    function startGame(){ gameStarted = true; endOverlay.classList.remove('show'); if (turnOverlay) turnOverlay.classList.remove('show'); menuOverlay.classList.remove('show'); menuOverlay.style.display='none'; footerMsg.textContent='Confirme a próxima jogada para começar.'; doNewMatch(); }
+    function startGame(){
+      gameStarted = true;
+      endOverlay.classList.remove('show');
+      if (turnOverlay) turnOverlay.classList.remove('show');
+      menuOverlay.classList.remove('show');
+      menuOverlay.style.display='none';
+      footerMsg.textContent='Confirme a próxima jogada para começar.';
+      doNewMatch();
+
+      if (bgmEnabled) {
+        try {
+          sndBgm.currentTime = 0;
+          sndBgm.volume = 0.4;
+          sndBgm.play();
+        } catch(e) { console.warn('Não foi possível tocar BGM:', e); }
+      }
+    }
     document.getElementById('btnStart').addEventListener('click', function(){
       startTeam = (firstBlue && firstBlue.checked) ? 'blue' : 'red';
       startGame();
     });
     btnPlayAgain.addEventListener('click', function(){ doNewMatch(); });
-    btnToMenu.addEventListener('click', function(){ gameStarted=false; endOverlay.classList.remove('show'); menuOverlay.classList.add('show'); menuOverlay.style.display='flex'; updateNextButton(); });
+    btnToMenu.addEventListener('click', function(){ gameStarted=false; endOverlay.classList.remove('show'); menuOverlay.classList.add('show'); menuOverlay.style.display='flex'; updateNextButton(); try{ sndBgm.pause(); }catch(_){} });
 
     // Inicialização
     updateScoreboard();
