@@ -32,7 +32,7 @@
     .ballToken.on{ opacity:1; filter:brightness(1.05); box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.18), 0 8px 18px rgba(56,189,248,.15); animation:breathe 2.2s ease-in-out infinite }
     .ballToken.red{ background:radial-gradient(45% 45% at 30% 30%, #fff 0%, rgba(255,255,255,.6) 20%, transparent 40%), linear-gradient(180deg, #f87171 0%, #ef4444 60%, #b91c1c 100%); outline-color:rgba(255,255,255,.35) }
     .ballToken.blue{ background:radial-gradient(45% 45% at 30% 30%, #fff 0%, rgba(255,255,255,.6) 20%, transparent 40%), linear-gradient(180deg, #60a5fa 0%, #3b82f6 60%, #1d4ed8 100%); outline-color:rgba(255,255,255,.35) }
-    @keyframes breathe{ 0%{ box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.18), 0 0 0 rgba(34,211,238,0)} 50%{ box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.18), 0 10px 24px rgba(34,211,238,.22)} 100%{ box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.18), 0 0 0 rgba(34,211,238,0)} }
+    @keyframes breathe{ 0%{ box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.18), 0 0 0 rgba(34,211,238,0)} 50%{ box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 10px 24px rgba(34,211,238,.22)} 100%{ box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.18), 0 0 0 rgba(34,211,238,0)} }
 
     /* Indicador da vez */
     .turn{ text-align:center; font-weight:800; border-radius:14px; padding:10px 14px; justify-self:center; align-self:center; display:inline-flex; align-items:center; gap:10px; letter-spacing:.02em; box-shadow:inset 0 0 0 1px rgba(255,255,255,.06), 0 8px 22px rgba(0,0,0,.35) }
@@ -166,6 +166,7 @@
   (function(){
     "use strict";
     const canvas = document.getElementById('game');
+    if(!canvas){ console.error('Canvas #game não encontrado'); return; }
     const ctx = canvas.getContext('2d');
     const W = canvas.width, H = canvas.height;
 
@@ -292,8 +293,14 @@
       return target.scores.outer; // dentro do painel e fora do hex
     }
 
-    function computeScores(){
-      let r=0,b=0; for(const o of balls){ const s=scoreForBall(o); if(o.team==='red') r+=s; else b+=s; } return {red:r, blue:b};
+    function computeScores(stoppedOnly){
+      let r=0,b=0;
+      for(const o of balls){
+        if(stoppedOnly && Math.hypot(o.vx,o.vy) >= stopSpeed) continue; // só conta bolas paradas
+        const s=scoreForBall(o);
+        if(o.team==='red') r+=s; else b+=s;
+      }
+      return {red:r, blue:b};
     }
     function renderTeamBalls(team, el){
       const remain = shotsLeft[team];
@@ -307,7 +314,7 @@
     }
     function renderBallCounters(){ renderTeamBalls('red', ballsRedEl); renderTeamBalls('blue', ballsBlueEl); }
     function updateScoreboard(){
-      const s=computeScores();
+      const s=computeScores(true);
       scoreRedEl.textContent=s.red; scoreBlueEl.textContent=s.blue;
       teamRedBox.classList.remove('lead');
       teamBlueBox.classList.remove('lead');
@@ -323,7 +330,7 @@
           roundOver=true;
           try{ sndEnd.currentTime=0; sndEnd.play(); }catch(_){/* ignore */}
         }
-        const s=computeScores();
+        const s=computeScores(true);
         const draw = (s.red===s.blue);
         const winner = draw ? null : (s.red>s.blue ? 'Vermelha' : 'Azul');
         const msg = draw? 'Empate!' : ('Vitória da Equipe '+winner+'!');
@@ -336,11 +343,9 @@
 
     // --- Campo/mesa (fundo dentro do canvas) ---
     function drawField(){
-      // Azul-noite com mesa estilizada
-      const sky=ctx.createLinearGradient(0,0,0,H);
-      sky.addColorStop(0,'#0b1422');
-      sky.addColorStop(1,'#071524');
-      ctx.fillStyle=sky; ctx.fillRect(0,0,W,H);
+      // Stage sólido de fundo (fica atrás de tudo)
+      ctx.fillStyle = '#0a192f';
+      ctx.fillRect(0,0,W,H);
 
       // Trilho (borda da mesa)
       const pad = 18; const railR = 22;
@@ -353,23 +358,36 @@
       ctx.strokeStyle='rgba(180,220,255,0.08)'; ctx.lineWidth=2; ctx.stroke();
       ctx.restore();
 
-      // Feltro (superfície)
+      // Feltro (superfície jogável) — cor SÓLIDA + linhas horizontais visíveis
       const feltPad = pad + 10; const feltR = 16;
       ctx.save();
       if(ctx.roundRect){ ctx.beginPath(); ctx.roundRect(feltPad,feltPad,W-feltPad*2,H-feltPad*2,feltR); }
       else { ctx.beginPath(); ctx.moveTo(feltPad+feltR,feltPad); ctx.arcTo(W-feltPad,feltPad,W-feltPad,feltPad+feltR,feltR); ctx.arcTo(W-feltPad,H-feltPad,W-feltPad-feltR,H-feltPad,feltR); ctx.arcTo(feltPad,H-feltPad,feltPad,feltPad+H-feltPad,feltR); ctx.arcTo(feltPad,feltPad,feltPad+feltR,feltPad,feltR); ctx.closePath(); }
-      const felt = ctx.createLinearGradient(0,feltPad,0,H-feltPad);
-      felt.addColorStop(0,'#0e2238'); felt.addColorStop(1,'#0b1d30');
-      ctx.fillStyle=felt; ctx.fill();
+
+      // Cor sólida da mesa (azul noite)
+      const feltSolid = '#0d233a';
+      ctx.fillStyle = feltSolid;
+      ctx.fill();
+
+      // Contornos do feltro
       ctx.strokeStyle='rgba(0,0,0,0.35)'; ctx.lineWidth=6; ctx.stroke();
       ctx.strokeStyle='rgba(200,230,255,0.06)'; ctx.lineWidth=1.5; ctx.stroke();
-      ctx.clip();
-      // textura leve no feltro
-      ctx.globalAlpha=0.03; ctx.strokeStyle='#cfe8ff'; ctx.lineWidth=1;
-      for(let y=feltPad+14; y<H-feltPad; y+=14){ ctx.beginPath(); ctx.moveTo(feltPad+8,y); ctx.lineTo(W-feltPad-8,y); ctx.stroke(); }
-      ctx.globalAlpha=1; ctx.restore();
 
-      // parafusos decorativos
+      // Linhas horizontais (textura sutil porém visível)
+      ctx.clip();
+      ctx.globalAlpha = 0.18;
+      ctx.strokeStyle = 'rgba(190,220,255,0.8)';
+      ctx.lineWidth = 1.2;
+      for(let y=feltPad+16; y<H-feltPad; y+=18){
+        ctx.beginPath();
+        ctx.moveTo(feltPad+8, y);
+        ctx.lineTo(W-feltPad-8, y);
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+      ctx.restore();
+
+      // Parafusos decorativos do trilho
       const screw = function(x,y){ ctx.beginPath(); ctx.arc(x,y,2.3,0,Math.PI*2); ctx.fillStyle='rgba(210,230,255,0.35)'; ctx.fill(); ctx.beginPath(); ctx.arc(x,y,0.9,0,Math.PI*2); ctx.fillStyle='rgba(10,20,35,0.8)'; ctx.fill(); };
       const pad2=pad; const sx = [pad2+26, W/2, W-pad2-26], sy=[pad2+26, H-pad2-26];
       for(const y of sy){ for(const x of sx){ screw(x,y); } }
@@ -465,43 +483,24 @@
 
     function drawLaunch(){
       ctx.save();
-      // zona com anéis concêntricos que remetem ao alvo
-      const gradient = ctx.createRadialGradient(launch.x, launch.y, 15, launch.x, launch.y, launch.r);
-      gradient.addColorStop(0, 'rgba(34,211,238,0.5)');
-      gradient.addColorStop(0.6, 'rgba(34,211,238,0.25)');
-      gradient.addColorStop(1, 'rgba(34,211,238,0)');
-      ctx.fillStyle = gradient;
+      // zona sólida em azul da borda da mesa
       ctx.beginPath();
-      ctx.arc(launch.x, launch.y, launch.r, 0, Math.PI * 2);
+      ctx.arc(launch.x, launch.y, launch.r, 0, Math.PI*2);
+      ctx.fillStyle = '#3a4e77'; // azul sólido
       ctx.fill();
-
       ctx.lineWidth = 3;
-      ctx.strokeStyle = '#22d3ee';
-      ctx.beginPath();
-      ctx.arc(launch.x, launch.y, launch.r, 0, Math.PI * 2);
+      ctx.strokeStyle = '#1e293b';
       ctx.stroke();
 
-      // Anéis internos
-      ctx.setLineDash([4,6]);
-      ctx.lineWidth = 1.5;
-      ctx.strokeStyle = 'rgba(34,211,238,0.5)';
-      for (let r = launch.r * 0.3; r < launch.r; r += launch.r * 0.3) {
-        ctx.beginPath();
-        ctx.arc(launch.x, launch.y, r, 0, Math.PI * 2);
-        ctx.stroke();
-      }
-      ctx.setLineDash([]);
-
-      // Glow pulsante
-      const pulse = Math.sin(Date.now()/400)*0.5+0.5;
-      ctx.shadowColor = `rgba(34,211,238,${0.6*pulse})`;
-      ctx.shadowBlur = 20;
-
-      // Texto
-      ctx.fillStyle = '#22d3ee';
-      ctx.font = 'bold 13px ui-sans-serif';
+      // Texto com contraste e borda
+      ctx.font = 'bold 15px ui-sans-serif';
       ctx.textAlign = 'center';
-      ctx.fillText('LANÇAR', launch.x, launch.y + 4);
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#f8fafc'; // claro para contraste
+      ctx.strokeStyle = '#000';
+      ctx.lineWidth = 3;
+      ctx.strokeText('LANÇAR', launch.x, launch.y);
+      ctx.fillText('LANÇAR', launch.x, launch.y);
       ctx.restore();
 
       // linha pontilhada divisória
@@ -563,9 +562,18 @@
       updateNextButton();
     }
     document.getElementById('resetRound').addEventListener('click', function(){ if(!gameStarted) return; doResetRound(); });
-    document.getElementById('newMatch').addEventListener('click', function(){ if(!gameStarted) return; doNewMatch(); });
+    document.getElementById('newMatch').addEventListener('click', function(){
+      // Sempre voltar ao menu para escolher quem começa
+      endOverlay.classList.remove('show');
+      if (turnOverlay) turnOverlay.classList.remove('show');
+      gameStarted = false;
+      footerMsg.textContent = 'Selecione quem começa e clique em "Iniciar jogo".';
+      menuOverlay.classList.add('show');
+      menuOverlay.style.display = 'flex';
+      // Não zeramos o placar aqui; o reset completo ocorre ao iniciar pelo menu (startGame -> doNewMatch)
+    });
 
-    // Testes (via console): runTests()
+    // Testes (via console): window.runTests()
     window.runTests = function(){ const cx=target.x, cy=target.y; const tests=[
       {name:'Centro (triângulo)', p:{x:cx,y:cy}, want:50},
       {name:'Pentágono', p:{x:cx, y:cy+target.pentR*0.3}, want:30},
@@ -579,10 +587,12 @@
       {name:'Borda do painel (5)', p:{x:target.area.x+2, y:target.area.y+2}, want:5},
       {name:'Fora pela direita', p:{x:target.area.x+target.area.w+1, y:cy}, want:0},
       {name:'Dentro do painel perto da base (5)', p:{x:target.x, y:target.area.y+target.area.h-10}, want:5},
-      // Casos extras para robustez
+      // Casos extras
       {name:'Quase fora do painel (0)', p:{x:target.area.x-0.1, y:target.y}, want:0},
       {name:'Centro do hex fora do círculo (10)', p:{x:target.x+target.circR+5, y:target.y}, want:10},
-      {name:'Canto do painel (5)', p:{x:target.area.x+target.area.w-2, y:target.area.y+2}, want:5}
+      {name:'Canto do painel (5)', p:{x:target.area.x+target.area.w-2, y:target.area.y+2}, want:5},
+      {name:'Círculo, borda superior', p:{x:cx, y:cy-target.circR}, want:20},
+      {name:'Hexágono, canto esquerdo', p:{x:cx-target.hexR*0.86, y:cy}, want:10}
     ]; let ok=true; for(const t of tests){ const got=scoreForBall(t.p); if(got!==t.want){ ok=false; console.error('[TEST FAIL] '+t.name+': esperado '+t.want+', obtido '+got);} else { console.log('[TEST OK] '+t.name);} } footerMsg.textContent = ok? 'Testes de pontuação: OK ✅ (ver console)' : 'Alguns testes falharam ❌ (ver console)'; };
 
     // Popup de próxima jogada
@@ -624,6 +634,8 @@
     renderBallCounters();
     updateTurnBanner();
     updateNextButton();
+
+    // Loop
     step();
 
   })();
