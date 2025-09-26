@@ -8,30 +8,52 @@
     *{ box-sizing:border-box }
     body{ margin:0; font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,Noto Sans,"Apple Color Emoji","Segoe UI Emoji"; background:radial-gradient(1200px 600px at 50% -200px,#1f2937 0%,#0f172a 60%); color:#fff; min-height:100vh; display:grid; place-items:center; padding:16px }
     .wrap{ width:min(1100px,96vw); display:grid; gap:12px }
-    header{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:8px }
+
+    /* Canvas (renderizamos o campo no drawField) */
+    canvas{ width:100%; height:auto; border-radius:14px; display:block }
+
+    header{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:12px }
     .scoreboard{ display:grid; gap:6px; grid-template-columns:repeat(2,1fr); background:#0b1220e6; border:1px solid #1f2a44; border-radius:14px; padding:10px 12px; box-shadow:0 10px 30px rgba(0,0,0,.45) }
     .team{ display:grid; grid-template-columns:12px 1fr auto; gap:8px; align-items:center; padding:6px 8px; border-radius:12px; background:linear-gradient(180deg,#0b1220,#0b122088) }
     .dot{ width:12px; height:12px; border-radius:999px }
     .tRed .dot{ background:#ef4444 }
     .tBlue .dot{ background:#3b82f6 }
     .value{ font-weight:700 }
-    .team .balls{ grid-column:1 / -1; display:flex; gap:6px; margin-top:4px }
-    .ballToken{ width:12px; height:12px; border-radius:999px; opacity:.35; outline:1px solid rgba(255,255,255,.25); box-shadow:0 1px 2px rgba(0,0,0,.35) inset }
-    .ballToken.on{ opacity:1; outline-color:rgba(255,255,255,.55) }
-    .ballToken.red{ background:#ef4444 }
-    .ballToken.blue{ background:#3b82f6 }
-    .turn{ text-align:center; font-weight:700; color:#22d3ee }
+
+    /* Placar de bolas com efeito */
+    .team .balls{ grid-column:1 / -1; display:flex; gap:8px; margin-top:6px; align-items:center }
+    .ballToken{ width:16px; height:16px; border-radius:999px; position:relative; display:inline-block; opacity:.55; box-shadow:inset 0 2px 4px rgba(0,0,0,.45), 0 2px 6px rgba(0,0,0,.35); outline:1px solid rgba(255,255,255,.18); transform:translateZ(0); transition:filter .2s ease, opacity .2s ease, box-shadow .2s ease }
+    .ballToken.on{ opacity:1; filter:brightness(1.05); box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.18), 0 8px 18px rgba(56,189,248,.15); animation:breathe 2.2s ease-in-out infinite }
+    .ballToken.red{ background:radial-gradient(45% 45% at 30% 30%, #fff 0%, rgba(255,255,255,.6) 20%, transparent 40%), linear-gradient(180deg, #f87171 0%, #ef4444 60%, #b91c1c 100%); outline-color:rgba(255,255,255,.35) }
+    .ballToken.blue{ background:radial-gradient(45% 45% at 30% 30%, #fff 0%, rgba(255,255,255,.6) 20%, transparent 40%), linear-gradient(180deg, #60a5fa 0%, #3b82f6 60%, #1d4ed8 100%); outline-color:rgba(255,255,255,.35) }
+
+    @keyframes breathe{ 0%{ box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.18), 0 0 0 rgba(34,211,238,0)} 50%{ box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.18), 0 10px 24px rgba(34,211,238,.22)} 100%{ box-shadow:inset 0 2px 4px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.18), 0 0 0 rgba(34,211,238,0)} }
+
+    .turn{ text-align:center; font-weight:800; color:#22d3ee; background:rgba(34,211,238,.08); border:1px solid rgba(34,211,238,.25); border-radius:999px; padding:6px 10px }
     .panel{ background:#0b1220e6; border:1px solid #1f2a44; padding:10px; border-radius:16px; display:grid; gap:10px; box-shadow:0 10px 30px rgba(0,0,0,.45) }
-    canvas{ width:100%; height:auto; border-radius:14px; background:#0a0f1a; display:block }
     .controls{ display:flex; flex-wrap:wrap; gap:10px; justify-content:center }
-    button{ background:#0ea5e9; color:#001018; border:none; font-weight:700; padding:10px 14px; border-radius:12px; cursor:pointer; transition:transform .06s ease, filter .2s ease }
+
+    /* Botões valorizados */
+    button{ background:#0ea5e9; color:#001018; border:none; font-weight:700; padding:10px 14px; border-radius:12px; cursor:pointer; transition:transform .06s ease, filter .2s ease, box-shadow .2s ease }
     button:hover{ filter:brightness(1.05) }
     button:active{ transform:translateY(1px) }
     .ghost{ background:#334155; color:#e5e7eb }
+    .btn{ position:relative; border-radius:14px; padding:12px 16px; font-weight:800; letter-spacing:.02em; box-shadow:inset 0 0 0 1px rgba(255,255,255,.08), 0 10px 24px rgba(8,145,178,.18); outline:0; border:0 }
+    .btn:before{ content:""; position:absolute; inset:0; border-radius:inherit; pointer-events:none; box-shadow:0 1px 0 rgba(255,255,255,.25) inset }
+    .btn:focus-visible{ box-shadow:0 0 0 3px rgba(34,211,238,.35), inset 0 0 0 1px rgba(255,255,255,.1) }
+    .btn-primary{ background:linear-gradient(180deg,#22d3ee 0%,#0ea5e9 100%); color:#06202a }
+    .btn-primary:hover{ filter:brightness(1.04) }
+    .btn-primary:active{ transform:translateY(1px) }
+    .btn-ghost{ background:linear-gradient(180deg,#1f2937,#111827); color:#e5e7eb; box-shadow:inset 0 0 0 1px #334155, 0 8px 18px rgba(2,6,23,.35) }
+    .btn-ghost:hover{ filter:brightness(1.06) }
+
+    .brand{ text-align:center; font-weight:900; letter-spacing:.08em; text-transform:uppercase; margin:8px 0 2px; font-size:clamp(28px,6vw,50px); background:linear-gradient(90deg,#e2e8f0 0%,#38bdf8 45%,#a78bfa 100%); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:0 6px 40px rgba(56,189,248,.25), 0 2px 10px rgba(167,139,250,.18) }
+
     .legend{ color:#94a3b8; font-size:14px; text-align:center }
     .pill{ padding:2px 8px; border-radius:999px; border:1px dashed #334155 }
     .footer{ color:#9ca3af; text-align:center; font-size:12px; opacity:.9 }
-    .overlay{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(2,6,23,.6); backdrop-filter:blur(4px); z-index:9999 }
+
+    .overlay{ position:fixed; inset:0; display:none; align-items:center; justify-content:center; background:rgba(2,6,23,.6); backdrop-filter:blur(4px); z-index:99999 }
     .overlay.show{ display:flex }
     .modal{ background:#0b1220; border:1px solid #1f2a44; border-radius:16px; padding:22px; width:min(520px,92vw); box-shadow:0 20px 60px rgba(0,0,0,.5); display:grid; gap:14px; text-align:center }
     .modal h1{ margin:0; font-size:24px }
@@ -41,6 +63,7 @@
 </head>
 <body>
   <div class="wrap">
+    <h1 class="brand">BORLING</h1>
     <header>
       <div class="scoreboard">
         <div class="team tRed">
@@ -54,15 +77,15 @@
       </div>
       <div class="turn" id="turnTxt">Vez: Vermelha — bolas restantes: 3</div>
       <div class="controls">
-        <button id="newMatch">Nova Partida</button>
-        <button class="ghost" id="resetRound">Reiniciar Rodada</button>
-        <button id="nextThrow" style="display:none">Próxima jogada: Equipe Vermelha</button>
+        <button id="newMatch" class="btn btn-primary">Nova Partida</button>
+        <button class="btn btn-ghost" id="resetRound">Reiniciar Rodada</button>
+        <button id="nextThrow" style="display:none">Próxima jogada (fallback)</button>
       </div>
     </header>
 
     <section class="panel">
       <canvas id="game" width="1100" height="600" aria-label="tabuleiro do jogo"></canvas>
-      <div class="legend">Clique e arraste <span class="pill">da zona de lançamento</span> (à esquerda) para definir <b>direção</b> e <b>força</b>. As equipes se alternam e cada uma lança <b>3 bolas</b>. As bolas permanecem no tabuleiro e podem empurrar as outras. <b>A pontuação só é contabilizada ao final da rodada</b> (após 3 lançamentos de cada equipe). Vence quem somar mais pontos.</div>
+      <div class="legend">Clique e arraste <span class="pill">da zona de lançamento</span> (à esquerda) para definir <b>direção</b> e <b>força</b>. As equipes se alternam e cada uma lança <b>3 bolas</b>. As bolas permanecem no tabuleiro e podem empurrar as outras. <b>A pontuação só é contabilizada ao final da rodada</b>. Vence quem somar mais pontos.</div>
       <div class="footer" id="footerMsg">Pronto para começar.</div>
     </section>
 
@@ -72,7 +95,7 @@
         <h1 id="turnTitle">Próxima jogada</h1>
         <p id="turnSub">Aguardando…</p>
         <div class="actions">
-          <button id="btnReady">Liberar arremesso</button>
+          <button id="btnReady" class="btn btn-primary">Liberar arremesso</button>
         </div>
       </div>
     </div>
@@ -83,7 +106,7 @@
         <h1>Borling</h1>
         <p>Arremesse 3 bolas por equipe e some pontos pelas formas. As bolas ficam no tabuleiro e podem empurrar as outras. Vence quem somar mais!</p>
         <div class="actions">
-          <button id="btnStart">Iniciar jogo</button>
+          <button id="btnStart" class="btn btn-primary">Iniciar jogo</button>
         </div>
       </div>
     </div>
@@ -94,8 +117,8 @@
         <h1 id="endTitle">Fim da rodada</h1>
         <p id="endSub">Resultados aparecerão aqui.</p>
         <div class="actions">
-          <button id="btnPlayAgain">Jogar novamente</button>
-          <button class="ghost" id="btnToMenu">Voltar ao menu</button>
+          <button id="btnPlayAgain" class="btn btn-primary">Jogar novamente</button>
+          <button class="btn btn-ghost" id="btnToMenu">Voltar ao menu</button>
         </div>
       </div>
     </div>
@@ -107,7 +130,6 @@
   </div>
 
 <script>
-// Aguarda a árvore DOM ficar pronta para evitar conflitos de execução
 window.addEventListener('DOMContentLoaded', function(){
 (function(){
   "use strict";
@@ -136,8 +158,8 @@ window.addEventListener('DOMContentLoaded', function(){
   target.area.x = target.x - target.area.w / 2;
   target.area.y = target.y - target.area.h / 2;
 
-  // Zona de lançamento
-  const launch = { x: 80, y: H/2, r: 65 };
+  // Zona de lançamento (levemente afastada da borda)
+  const launch = { x: 110, y: H/2, r: 65 };
 
   // Física
   const ballR = 12, friction = 0.992, stopSpeed = 0.08, maxPower = 18;
@@ -160,7 +182,6 @@ window.addEventListener('DOMContentLoaded', function(){
   const btnStart = document.getElementById('btnStart');
   const btnPlayAgain = document.getElementById('btnPlayAgain');
   const btnToMenu = document.getElementById('btnToMenu');
-  // Overlay de próxima jogada (popup)
   const turnOverlay = document.getElementById('turnOverlay');
   const turnTitle = document.getElementById('turnTitle');
   const turnSub = document.getElementById('turnSub');
@@ -220,12 +241,7 @@ window.addEventListener('DOMContentLoaded', function(){
   }
 
   function computeScores(){
-    let r=0,b=0;
-    for(const o of balls){
-      const s=scoreForBall(o);
-      if(o.team==='red') r+=s; else b+=s;
-    }
-    return {red:r, blue:b};
+    let r=0,b=0; for(const o of balls){ const s=scoreForBall(o); if(o.team==='red') r+=s; else b+=s; } return {red:r, blue:b};
   }
   function renderTeamBalls(team, el){
     const remain = shotsLeft[team];
@@ -256,6 +272,70 @@ window.addEventListener('DOMContentLoaded', function(){
       endSub.textContent = 'Placar final — Vermelha ' + s.red + ' × ' + s.blue + ' Azul';
       endOverlay.classList.add('show');
     }
+  }
+
+  // --- Campo/mesa (fundo dentro do canvas) ---
+  function drawField(){
+    // Azul-noite com mesa estilizada
+    const sky=ctx.createLinearGradient(0,0,0,H);
+    sky.addColorStop(0,'#0b1422');
+    sky.addColorStop(1,'#071524');
+    ctx.fillStyle=sky; ctx.fillRect(0,0,W,H);
+
+    // Trilho (borda da mesa)
+    const pad = 18; const railR = 22;
+    ctx.save();
+    if(ctx.roundRect){ ctx.beginPath(); ctx.roundRect(pad,pad,W-pad*2,H-pad*2,railR); }
+    else { ctx.beginPath(); ctx.moveTo(pad+railR,pad); ctx.arcTo(W-pad,pad,W-pad,pad+railR,railR); ctx.arcTo(W-pad,H-pad,W-pad-railR,H-pad,railR); ctx.arcTo(pad,H-pad,pad,pad+H-pad,railR); ctx.arcTo(pad,pad,pad+railR,pad,railR); ctx.closePath(); }
+    const railG = ctx.createLinearGradient(0,pad,0,H-pad);
+    railG.addColorStop(0,'#0e1b2e'); railG.addColorStop(1,'#0a1526');
+    ctx.fillStyle = railG; ctx.fill();
+    ctx.strokeStyle='rgba(180,220,255,0.08)'; ctx.lineWidth=2; ctx.stroke();
+    ctx.restore();
+
+    // Feltro (superfície)
+    const feltPad = pad + 10; const feltR = 16;
+    ctx.save();
+    if(ctx.roundRect){ ctx.beginPath(); ctx.roundRect(feltPad,feltPad,W-feltPad*2,H-feltPad*2,feltR); }
+    else { ctx.beginPath(); ctx.moveTo(feltPad+feltR,feltPad); ctx.arcTo(W-feltPad,feltPad,W-feltPad,feltPad+feltR,feltR); ctx.arcTo(W-feltPad,H-feltPad,W-feltPad-feltR,H-feltPad,feltR); ctx.arcTo(feltPad,H-feltPad,feltPad,feltPad+H-feltPad,feltR); ctx.arcTo(feltPad,feltPad,feltPad+feltR,feltPad,feltR); ctx.closePath(); }
+    const felt = ctx.createLinearGradient(0,feltPad,0,H-feltPad);
+    felt.addColorStop(0,'#0e2238'); felt.addColorStop(1,'#0b1d30');
+    ctx.fillStyle=felt; ctx.fill();
+    ctx.strokeStyle='rgba(0,0,0,0.35)'; ctx.lineWidth=6; ctx.stroke();
+    ctx.strokeStyle='rgba(200,230,255,0.06)'; ctx.lineWidth=1.5; ctx.stroke();
+    ctx.clip();
+    // textura leve no feltro
+    ctx.globalAlpha=0.03; ctx.strokeStyle='#cfe8ff'; ctx.lineWidth=1;
+    for(let y=feltPad+14; y<H-feltPad; y+=14){ ctx.beginPath(); ctx.moveTo(feltPad+8,y); ctx.lineTo(W-feltPad-8,y); ctx.stroke(); }
+    ctx.globalAlpha=1; ctx.restore();
+
+    // parafusos decorativos
+    const screw = (x,y)=>{ ctx.beginPath(); ctx.arc(x,y,2.3,0,Math.PI*2); ctx.fillStyle='rgba(210,230,255,0.35)'; ctx.fill(); ctx.beginPath(); ctx.arc(x,y,0.9,0,Math.PI*2); ctx.fillStyle='rgba(10,20,35,0.8)'; ctx.fill(); };
+    const pad2=pad; const sx = [pad2+26, W/2, W-pad2-26], sy=[pad2+26, H-pad2-26];
+    for(const y of sy){ for(const x of sx){ screw(x,y); } }
+  }
+
+  // --- Linha divisória ---
+  const getDividerX = () => (launch.x + target.area.x) / 2;
+
+  // --- Mira limitada até a linha divisória ---
+  function computeAim(start, mouse){
+    const ang = Math.atan2(mouse.y - start.y, mouse.x - start.x);
+    const cos = Math.cos(ang);
+    const lenRaw = Math.hypot(mouse.x - start.x, mouse.y - start.y);
+    let limit;
+    if (cos > 0) {
+      const toDivider = getDividerX() - start.x;
+      limit = toDivider / cos;
+      if (!isFinite(limit) || limit < 0) limit = 0;
+    } else {
+      limit = 120; // cap visual quando mira para a esquerda
+    }
+    const len = Math.max(0, Math.min(lenRaw, limit));
+    const ax = start.x + Math.cos(ang) * len;
+    const ay = start.y + Math.sin(ang) * len;
+    const pwr = (limit > 0 ? (len / limit) : 0) * maxPower;
+    return { ang, len, limit, ax, ay, pwr };
   }
 
   // Simulação
@@ -291,7 +371,7 @@ window.addEventListener('DOMContentLoaded', function(){
     requestAnimationFrame(step);
   }
 
-  // Desenho
+  // Desenho do alvo e UI no canvas
   function drawTarget(){
     const A=target.area; ctx.save(); ctx.shadowColor='#000'; ctx.shadowBlur=12; ctx.beginPath();
     if(!CanvasRenderingContext2D.prototype.roundRect){
@@ -314,30 +394,53 @@ window.addEventListener('DOMContentLoaded', function(){
     ctx.fillText('10', target.x + target.hexR*0.78, target.y - target.hexR*0.4);
     ctx.textAlign='center'; ctx.fillText('5', target.x, A.y + 22);
   }
+
   function drawLaunch(){
     ctx.save();
-    ctx.beginPath(); ctx.arc(launch.x,launch.y,launch.r,0,Math.PI*2); ctx.fillStyle='#0b1220'; ctx.fill(); ctx.lineWidth=2; ctx.strokeStyle='#1f2a44'; ctx.stroke();
-    ctx.fillStyle='#94a3b8'; ctx.font='600 14px ui-sans-serif'; ctx.textAlign='center'; ctx.fillText('Zona de', launch.x, launch.y-8); ctx.fillText('Lançamento', launch.x, launch.y+10);
+    // base da zona
+    ctx.beginPath();
+    ctx.arc(launch.x,launch.y,launch.r,0,Math.PI*2);
+    const lg=ctx.createLinearGradient(launch.x-launch.r,launch.y-launch.r,launch.x+launch.r,launch.y+launch.r);
+    lg.addColorStop(0,'#234d7a');
+    lg.addColorStop(1,'#2d5f94');
+    ctx.fillStyle=lg; ctx.fill();
+    ctx.lineWidth=3; ctx.strokeStyle='#a3d8f4'; ctx.stroke();
+
+    // glow pulsante
+    const pulse = Math.sin(Date.now()/400)*0.5+0.5; // 0..1
+    ctx.shadowColor = `rgba(163,216,244,${0.6*pulse})`;
+    ctx.shadowBlur = 18 + 12*pulse;
+
+    // textos (mesma cor da indicação de vez)
+    ctx.fillStyle='#22d3ee';
+    ctx.font='800 14px ui-sans-serif'; ctx.textAlign='center';
+    ctx.fillText('ZONA DE', launch.x, launch.y-8);
+    ctx.fillText('LANÇAMENTO', launch.x, launch.y+10);
     ctx.restore();
-    ctx.beginPath(); ctx.moveTo(220,40); ctx.lineTo(220,H-40); ctx.setLineDash([6,6]); ctx.lineWidth=2; ctx.strokeStyle='#263248'; ctx.stroke();
+
+    // linha pontilhada (isolar estado para não afetar outros strokes)
+    ctx.save();
+    ctx.beginPath(); const divX = getDividerX();
+    ctx.moveTo(divX,40); ctx.lineTo(divX,H-40);
+    ctx.setLineDash([8,8]); ctx.lineWidth=4; ctx.strokeStyle='#3a4e77'; ctx.stroke();
+    ctx.restore();
   }
+
   function draw(){
     ctx.clearRect(0,0,W,H);
-    ctx.save(); ctx.strokeStyle='rgba(148,163,184,.08)'; ctx.lineWidth=1;
-    for(let x=0;x<W;x+=40){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
-    for(let y=0;y<H;y+=40){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
-    ctx.restore();
+    drawField();
     drawTarget();
     drawLaunch();
+    // bolas
     for(const b of balls){
       const g=ctx.createRadialGradient(b.x-4,b.y-6,2,b.x,b.y,18); g.addColorStop(0,'#ffffff'); g.addColorStop(1,b.color);
       ctx.beginPath(); ctx.arc(b.x,b.y,ballR,0,Math.PI*2); ctx.fillStyle=g; ctx.fill(); ctx.lineWidth=2; ctx.strokeStyle='#0b0f1a'; ctx.stroke();
     }
+    // mira
     if(dragging){
-      ctx.beginPath(); ctx.moveTo(dragStart.x,dragStart.y); ctx.lineTo(mouse.x,mouse.y); ctx.lineWidth=2; ctx.strokeStyle='#22d3ee'; ctx.stroke();
-      const ang=Math.atan2(mouse.y-dragStart.y, mouse.x-dragStart.x); const len=Math.min(60,Math.hypot(mouse.x-dragStart.x, mouse.y-dragStart.y));
-      const ax=dragStart.x+Math.cos(ang)*len; const ay=dragStart.y+Math.sin(ang)*len;
-      ctx.beginPath(); ctx.arc(ax,ay,4,0,Math.PI*2); ctx.fillStyle='#22d3ee'; ctx.fill();
+      const aim = computeAim(dragStart, mouse);
+      ctx.beginPath(); ctx.moveTo(dragStart.x,dragStart.y); ctx.lineTo(aim.ax,aim.ay); ctx.lineWidth=2; ctx.strokeStyle='#22d3ee'; ctx.stroke();
+      ctx.beginPath(); ctx.arc(aim.ax,aim.ay,4,0,Math.PI*2); ctx.fillStyle='#22d3ee'; ctx.fill();
     }
   }
 
@@ -350,75 +453,36 @@ window.addEventListener('DOMContentLoaded', function(){
     const p={x:(e.clientX-r.left)*W/r.width, y:(e.clientY-r.top)*H/r.height};
     if(inLaunchZone(p) && shotsLeft[turn]>0){ dragging=true; dragStart=p; mouse=p; footerMsg.textContent='Arraste para definir direção/força e solte para lançar.'; }
   });
-  canvas.addEventListener('mousemove', function(e){
-    if(!dragging) return;
-    const r=canvas.getBoundingClientRect();
-    mouse={x:(e.clientX-r.left)*W/r.width, y:(e.clientY-r.top)*H/r.height};
-  });
-  window.addEventListener('mouseup', function(){
-    if(!dragging) return;
-    dragging=false;
-    const dx=mouse.x-dragStart.x, dy=mouse.y-dragStart.y;
-    let pwr=Math.hypot(dx,dy)/14; pwr=Math.min(pwr,maxPower); const ang=Math.atan2(dy,dx);
-    balls.push({x:launch.x,y:launch.y,vx:Math.cos(ang)*pwr,vy:Math.sin(ang)*pwr,team:turn,color:teamColor(turn)});
-    shotsLeft[turn]--;
-    try{ sndLaunch.currentTime=0; sndLaunch.play(); }catch(_){/* ignore */}
-    ready=false;
-    turnTxt.textContent='Vez: ' + (turn==='red'?'Vermelha':'Azul') + ' — bolas restantes: ' + shotsLeft[turn];
-    renderBallCounters();
-    nextTurn();
-    if(shotsLeft.red===0 && shotsLeft.blue===0) footerMsg.textContent='Aguardando as bolas pararem para fechar a rodada…';
-    else footerMsg.textContent='Bola lançada! Aguarde parar e confirme a próxima jogada.';
-    updateScoreboard();
-  });
+  canvas.addEventListener('mousemove', function(e){ if(!dragging) return; const r=canvas.getBoundingClientRect(); mouse={x:(e.clientX-r.left)*W/r.width, y:(e.clientY-r.top)*H/r.height}; });
+  window.addEventListener('mouseup', function(){ if(!dragging) return; dragging=false; const aim = computeAim(dragStart, mouse); const pwr = Math.min(aim.pwr, maxPower); const ang = aim.ang; balls.push({x:launch.x,y:launch.y,vx:Math.cos(ang)*pwr,vy:Math.sin(ang)*pwr,team:turn,color:teamColor(turn)}); shotsLeft[turn]--; try{ sndLaunch.currentTime=0; sndLaunch.play(); }catch(_){/* ignore */} ready=false; turnTxt.textContent='Vez: ' + (turn==='red'?'Vermelha':'Azul') + ' — bolas restantes: ' + shotsLeft[turn]; renderBallCounters(); nextTurn(); if(shotsLeft.red===0 && shotsLeft.blue===0) footerMsg.textContent='Aguardando as bolas pararem para fechar a rodada…'; else footerMsg.textContent='Bola lançada! Aguarde parar e confirme a próxima jogada.'; updateScoreboard(); });
 
   // Controles
-  function doResetRound(){
-    balls=[]; shotsLeft={red:3,blue:3}; turn='red'; roundOver=false; ready=false;
-    updateScoreboard();
-    turnTxt.textContent='Vez: Vermelha — bolas restantes: 3';
-    footerMsg.textContent='Rodada reiniciada. Confirme a próxima jogada para começar.';
-    endOverlay.classList.remove('show');
-    updateNextButton();
-  }
-  function doNewMatch(){
-    balls=[]; shotsLeft={red:3,blue:3}; turn='red'; roundOver=false; ready=false;
-    scoreRedEl.textContent='0'; scoreBlueEl.textContent='0';
-    updateScoreboard();
-    turnTxt.textContent='Vez: Vermelha — bolas restantes: 3';
-    footerMsg.textContent='Nova partida iniciada! Confirme a próxima jogada para começar.';
-    endOverlay.classList.remove('show');
-    updateNextButton();
-  }
+  function doResetRound(){ balls=[]; shotsLeft={red:3,blue:3}; turn='red'; roundOver=false; ready=false; updateScoreboard(); turnTxt.textContent='Vez: Vermelha — bolas restantes: 3'; footerMsg.textContent='Rodada reiniciada. Confirme a próxima jogada para começar.'; endOverlay.classList.remove('show'); updateNextButton(); }
+  function doNewMatch(){ balls=[]; shotsLeft={red:3,blue:3}; turn='red'; roundOver=false; ready=false; scoreRedEl.textContent='0'; scoreBlueEl.textContent='0'; updateScoreboard(); turnTxt.textContent='Vez: Vermelha — bolas restantes: 3'; footerMsg.textContent='Nova partida iniciada! Confirme a próxima jogada para começar.'; endOverlay.classList.remove('show'); updateNextButton(); }
   document.getElementById('resetRound').addEventListener('click', function(){ if(!gameStarted) return; doResetRound(); });
   document.getElementById('newMatch').addEventListener('click', function(){ if(!gameStarted) return; doNewMatch(); });
 
   // Testes (via console): runTests()
-  window.runTests = function(){
-    const cx=target.x, cy=target.y;
-    const tests=[
-      {name:'Centro (triângulo)', p:{x:cx,y:cy}, want:50},
-      {name:'Pentágono', p:{x:cx, y:cy+target.pentR*0.3}, want:30},
-      {name:'Círculo', p:{x:cx+target.circR*0.6, y:cy}, want:20},
-      {name:'Hexágono', p:{x:cx+target.hexR*0.7, y:cy}, want:10},
-      {name:'Painel (5 pts)', p:{x:target.area.x+20, y:target.area.y+20}, want:5},
-      {name:'Fora do painel', p:{x:target.area.x-5, y:target.area.y-5}, want:0},
-      {name:'Borda do círculo (20)', p:{x:cx+target.circR, y:cy}, want:20},
-      {name:'Dentro do hexágono, fora do círculo (10)', p:{x:cx+target.circR+10, y:cy}, want:10},
-      {name:'Borda superior do triângulo (50)', p:{x:cx, y:cy-target.triR+1}, want:50},
-      {name:'Borda do painel (5)', p:{x:target.area.x+2, y:target.area.y+2}, want:5},
-      {name:'Fora pela direita', p:{x:target.area.x+target.area.w+1, y:cy}, want:0},
-      {name:'Dentro do painel perto da base (5)', p:{x:target.x, y:target.area.y+target.area.h-10}, want:5},
-      // Casos extras para robustez
-      {name:'Quase fora do painel (0)', p:{x:target.area.x-0.1, y:target.y}, want:0},
-      {name:'Centro do hex fora do círculo (10)', p:{x:target.x+target.circR+5, y:target.y}, want:10},
-      {name:'Canto do painel (5)', p:{x:target.area.x+target.area.w-2, y:target.area.y+2}, want:5}
-    ];
-    let ok=true; for(const t of tests){ const got=scoreForBall(t.p); if(got!==t.want){ ok=false; console.error('[TEST FAIL] '+t.name+': esperado '+t.want+', obtido '+got);} else { console.log('[TEST OK] '+t.name);} }
-    footerMsg.textContent = ok? 'Testes de pontuação: OK ✅ (ver console)' : 'Alguns testes falharam ❌ (ver console)';
-  };
+  window.runTests = function(){ const cx=target.x, cy=target.y; const tests=[
+    {name:'Centro (triângulo)', p:{x:cx,y:cy}, want:50},
+    {name:'Pentágono', p:{x:cx, y:cy+target.pentR*0.3}, want:30},
+    {name:'Círculo', p:{x:cx+target.circR*0.6, y:cy}, want:20},
+    {name:'Hexágono', p:{x:cx+target.hexR*0.7, y:cy}, want:10},
+    {name:'Painel (5 pts)', p:{x:target.area.x+20, y:target.area.y+20}, want:5},
+    {name:'Fora do painel', p:{x:target.area.x-5, y:target.area.y-5}, want:0},
+    {name:'Borda do círculo (20)', p:{x:cx+target.circR, y:cy}, want:20},
+    {name:'Dentro do hexágono, fora do círculo (10)', p:{x:cx+target.circR+10, y:cy}, want:10},
+    {name:'Borda superior do triângulo (50)', p:{x:cx, y:cy-target.triR+1}, want:50},
+    {name:'Borda do painel (5)', p:{x:target.area.x+2, y:target.area.y+2}, want:5},
+    {name:'Fora pela direita', p:{x:target.area.x+target.area.w+1, y:cy}, want:0},
+    {name:'Dentro do painel perto da base (5)', p:{x:target.x, y:target.area.y+target.area.h-10}, want:5},
+    // Casos extras para robustez
+    {name:'Quase fora do painel (0)', p:{x:target.area.x-0.1, y:target.y}, want:0},
+    {name:'Centro do hex fora do círculo (10)', p:{x:target.x+target.circR+5, y:target.y}, want:10},
+    {name:'Canto do painel (5)', p:{x:target.area.x+target.area.w-2, y:target.area.y+2}, want:5}
+  ]; let ok=true; for(const t of tests){ const got=scoreForBall(t.p); if(got!==t.want){ ok=false; console.error('[TEST FAIL] '+t.name+': esperado '+t.want+', obtido '+got);} else { console.log('[TEST OK] '+t.name);} } footerMsg.textContent = ok? 'Testes de pontuação: OK ✅ (ver console)' : 'Alguns testes falharam ❌ (ver console)'; };
 
-  // Controle por popup (substitui o botão da barra)
+  // Popup de próxima jogada
   function updateNextButton(){
     if(!gameStarted){ if(turnOverlay) turnOverlay.classList.remove('show'); return; }
     if(roundOver){ if(turnOverlay) turnOverlay.classList.remove('show'); return; }
@@ -432,41 +496,18 @@ window.addEventListener('DOMContentLoaded', function(){
     footerMsg.textContent = 'Aguardando confirmação da Equipe ' + equipe + '…';
   }
 
-  // Popup: liberar arremesso
-  btnReady.addEventListener('click', function(){
-    if(roundOver || !gameStarted) return;
-    if(!allStopped()) return;
-    if(ready) return;
-    ready = true;
-    if(turnOverlay) turnOverlay.classList.remove('show');
-    footerMsg.textContent = 'Pode lançar: ' + (turn==='red'?'Equipe Vermelha':'Equipe Azul') + '.';
-    updateNextButton();
-  });
+  btnReady.addEventListener('click', function(){ if(roundOver || !gameStarted) return; if(!allStopped()) return; if(ready) return; ready = true; if(turnOverlay) turnOverlay.classList.remove('show'); footerMsg.textContent = 'Pode lançar: ' + (turn==='red'?'Equipe Vermelha':'Equipe Azul') + '.'; updateNextButton(); });
 
-  // Polyfill roundRect (se faltar no navegador)
+  // Polyfill roundRect
   if (!CanvasRenderingContext2D.prototype.roundRect) {
     CanvasRenderingContext2D.prototype.roundRect = function(x,y,w,h,r){ if(w<2*r) r=w/2; if(h<2*r) r=h/2; this.beginPath(); this.moveTo(x+r,y); this.arcTo(x+w,y, x+w,y+h,r); this.arcTo(x+w,y+h, x,y+h,r); this.arcTo(x,y+h, x,y,r); this.arcTo(x,y, x+w,y,r); this.closePath(); return this; };
   }
 
-  // Start helpers (menu)
-  function startGame(){
-    gameStarted = true;
-    endOverlay.classList.remove('show');
-    if (turnOverlay) turnOverlay.classList.remove('show');
-    menuOverlay.classList.remove('show');
-    menuOverlay.style.display='none';
-    footerMsg.textContent='Confirme a próxima jogada para começar.';
-    doNewMatch();
-  }
-  btnStart.addEventListener('click', startGame);
+  // Menu / início
+  function startGame(){ gameStarted = true; endOverlay.classList.remove('show'); if (turnOverlay) turnOverlay.classList.remove('show'); menuOverlay.classList.remove('show'); menuOverlay.style.display='none'; footerMsg.textContent='Confirme a próxima jogada para começar.'; doNewMatch(); }
+  document.getElementById('btnStart').addEventListener('click', startGame);
   btnPlayAgain.addEventListener('click', function(){ doNewMatch(); });
-  btnToMenu.addEventListener('click', function(){
-    gameStarted=false;
-    endOverlay.classList.remove('show');
-    menuOverlay.classList.add('show');
-    menuOverlay.style.display='flex';
-    updateNextButton();
-  });
+  btnToMenu.addEventListener('click', function(){ gameStarted=false; endOverlay.classList.remove('show'); menuOverlay.classList.add('show'); menuOverlay.style.display='flex'; updateNextButton(); });
 
   // Inicialização
   updateScoreboard();
